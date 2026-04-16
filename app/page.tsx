@@ -1,5 +1,9 @@
 "use client";
-
+declare global {
+  interface Window {
+    ym?: (...args: any[]) => void;
+  }
+}
 import { useState } from "react";
 import Link from "next/link";
 
@@ -65,7 +69,11 @@ const partners = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const trackWhatsAppClick = () => {
+    if (typeof window !== "undefined" && window.ym) {
+      window.ym(108573750, "reachGoal", "whatsapp_click");
+    }
+  };
   return (
     <main className="bg-neutral-950 text-white">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur">
@@ -446,12 +454,14 @@ export default function Home() {
                 className="min-h-[140px] rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-white/35"
                 placeholder="Комментарий"
               />
-              <a
-                href="https://wa.me/77072996264?text=Здравствуйте!%20Хочу%20обсудить%20мероприятие%20с%20Grunge%20Hotel."
-                className="rounded-full bg-amber-300 px-7 py-4 text-center text-sm font-semibold text-black transition hover:bg-amber-200"
-              >
-                Написать в WhatsApp
-              </a>
+             <a
+  href="https://wa.me/77072996264"
+  onClick={trackWhatsAppClick}
+  className="fixed bottom-4 right-4 z-50 rounded-full bg-amber-300 px-5 py-3 text-sm font-semibold text-black shadow-[0_12px_30px_rgba(0,0,0,0.35)] transition hover:bg-amber-200 md:bottom-5 md:right-5"
+  aria-label="WhatsApp"
+>
+  WhatsApp
+</a> 
             </div>
           </div>
         </div>
