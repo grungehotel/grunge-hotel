@@ -96,15 +96,15 @@ export default function Home() {
           </Link>
 
           <nav className="hidden items-center gap-6 text-sm text-white/70 md:flex">
-            <a href="#services" className="hover:text-white">
-              Services
-            </a>
-            <a href="#cases" className="hover:text-white">
-              Cases
-            </a>
-            <a href="#contact" className="hover:text-white">
-              Contact
-            </a>
+          <a href="#services" className="hover:text-white">
+  Услуги
+</a>
+<a href="#cases" className="hover:text-white">
+  Кейсы
+</a>
+<a href="#contact" className="hover:text-white">
+  Контакты
+</a>
             <a
               href="#contact"
               className="rounded-full border border-white/15 px-5 py-2.5 text-white transition hover:border-white/40 hover:bg-white/5"
@@ -126,13 +126,25 @@ export default function Home() {
         {menuOpen && (
           <div className="border-t border-white/10 bg-black/95 md:hidden">
             <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
-            <a href="#services" className="hover:text-white">
+            <a
+  href="#services"
+  className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
+  onClick={() => setMenuOpen(false)}
+>
   Услуги
 </a>
-<a href="#cases" className="hover:text-white">
+<a
+  href="#cases"
+  className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
+  onClick={() => setMenuOpen(false)}
+>
   Кейсы
 </a>
-<a href="#contact" className="hover:text-white">
+<a
+  href="#contact"
+  className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
+  onClick={() => setMenuOpen(false)}
+>
   Контакты
 </a>
               <a
@@ -190,19 +202,37 @@ export default function Home() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-2 text-xs text-white/70 sm:text-sm">
-              <span className="rounded-full border border-white/10 bg-black/20 px-4 py-2">
-                Live Band
-              </span>
-              <span className="rounded-full border border-white/10 bg-black/20 px-4 py-2">
-                Tribute Shows
-              </span>
-              <span className="rounded-full border border-white/10 bg-black/20 px-4 py-2">
-                Свет / звук / сцена
-              </span>
-              <span className="rounded-full border border-white/10 bg-black/20 px-4 py-2">
-                Шоу под ключ
-              </span>
-            </div>
+  <a
+    href="#live-band"
+    className="rounded-full border border-white/10 bg-black/20 px-4 py-2 transition hover:border-white/30 hover:bg-white/10"
+  >
+    Живая группа
+  </a>
+  <a
+    href="#tribute-shows"
+    className="rounded-full border border-white/10 bg-black/20 px-4 py-2 transition hover:border-white/30 hover:bg-white/10"
+  >
+    Трибьют-шоу
+  </a>
+  <a
+    href="#technical-production"
+    className="rounded-full border border-white/10 bg-black/20 px-4 py-2 transition hover:border-white/30 hover:bg-white/10"
+  >
+    Свет / звук / сцена
+  </a>
+  <a
+    href="#event-production"
+    className="rounded-full border border-white/10 bg-black/20 px-4 py-2 transition hover:border-white/30 hover:bg-white/10"
+  >
+    Шоу под ключ
+  </a>
+  <a
+    href="#studio"
+    className="rounded-full border border-white/10 bg-black/20 px-4 py-2 transition hover:border-white/30 hover:bg-white/10"
+  >
+    Студия
+  </a>
+</div>
           </div>
         </div>
       </section>
@@ -214,7 +244,7 @@ export default function Home() {
               Что это за формат
             </p>
             <h2 className="font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">
-              Не просто группа, а музыкальный подрядчик под задачу
+              Ваш музыкальный подрядчик под задачу
             </h2>
           </div>
 
