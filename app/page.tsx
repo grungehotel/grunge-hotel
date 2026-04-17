@@ -569,6 +569,15 @@ export default function Home() {
         </div>
       </footer>
 
+      <a
+        href="https://wa.me/77072996264?text=Здравствуйте!%20Хочу%20обсудить%20мероприятие%20с%20Grunge%20Hotel."
+        onClick={trackWhatsAppClick}
+        className="fixed bottom-4 right-4 z-50 rounded-full bg-amber-300 px-5 py-3 text-sm font-semibold text-black shadow-[0_12px_30px_rgba(0,0,0,0.35)] transition hover:bg-amber-200 md:bottom-5 md:right-5"
+        aria-label="WhatsApp"
+      >
+        WhatsApp
+      </a>
+
       </main>
 );
 }
