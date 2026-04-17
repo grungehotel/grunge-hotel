@@ -73,7 +73,7 @@ const videoGallery = [
   },
   {
     title: "Живая подача и энергия зала",
-    text: "Короткий вертикальный фрагмент, который показывает плотную подачу, реакцию публики и атмосферу выступления вживую.",
+    text: "Корпоративное мероприятие.",
     embedUrl: "https://www.youtube.com/embed/PxHy7URcpD4",
     href: "https://youtube.com/shorts/PxHy7URcpD4?si=RYZVMBMVjRFRpuZM",
   },
