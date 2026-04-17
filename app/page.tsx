@@ -79,7 +79,7 @@ const videoGallery = [
   },
   {
     title: "Фрагмент live-программы",
-    text: "Ещё один короткий фрагмент для быстрой оценки сценической динамики, звучания группы и общего впечатления от live-формата.",
+    text: "Новогодний корпоратив компании VTB.",
     embedUrl: "https://www.youtube.com/embed/D9q61SpeCbM",
     href: "https://youtube.com/shorts/D9q61SpeCbM?si=azETVF2m99LVQT9r",
   },
