@@ -607,7 +607,7 @@ export default function Home() {
             className="relative overflow-hidden rounded-[2rem] border border-white/10"
             style={{
               backgroundImage:
-                "linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.78) 45%, rgba(0,0,0,0.52) 100%), url('/images/Quartetmain2.jpg')",
+                "linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.78) 45%, rgba(0,0,0,0.52) 100%), url('/images/quartet main.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
