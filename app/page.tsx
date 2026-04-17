@@ -69,9 +69,50 @@ const partners = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    date: "",
+    format: "",
+    comment: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
   const trackWhatsAppClick = () => {
     if (typeof window !== "undefined" && window.ym) {
       window.ym(108573750, "reachGoal", "whatsapp_click");
+    }
+  };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage("");
+
+    try {
+      const res = await fetch("/api/telegram", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        throw new Error("Request failed");
+      }
+
+      setSubmitMessage("Заявка отправлена");
+      setForm({
+        name: "",
+        phone: "",
+        date: "",
+        format: "",
+        comment: "",
+      });
+    } catch (error) {
+      setSubmitMessage("Не удалось отправить заявку");
+    } finally {
+      setIsSubmitting(false);
     }
   };
   return (
@@ -463,36 +504,60 @@ export default function Home() {
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-            <div className="grid gap-4">
+            <form onSubmit={handleSubmit} className="grid gap-4">
               <input
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
                 className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-white/35"
                 placeholder="Имя"
               />
               <input
+                value={form.phone}
+                onChange={(e) => setForm({ ...form, phone: e.target.value })}
                 className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-white/35"
                 placeholder="Телефон / WhatsApp"
               />
               <input
+                value={form.date}
+                onChange={(e) => setForm({ ...form, date: e.target.value })}
                 className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-white/35"
                 placeholder="Дата мероприятия"
               />
               <input
+                value={form.format}
+                onChange={(e) => setForm({ ...form, format: e.target.value })}
                 className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-white/35"
                 placeholder="Формат мероприятия"
               />
               <textarea
+                value={form.comment}
+                onChange={(e) => setForm({ ...form, comment: e.target.value })}
                 className="min-h-[140px] rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-white/35"
                 placeholder="Комментарий"
               />
-             <a
-  href="https://wa.me/77072996264"
-  onClick={trackWhatsAppClick}
-  className="fixed bottom-4 right-4 z-50 rounded-full bg-amber-300 px-5 py-3 text-sm font-semibold text-black shadow-[0_12px_30px_rgba(0,0,0,0.35)] transition hover:bg-amber-200 md:bottom-5 md:right-5"
-  aria-label="WhatsApp"
->
-  WhatsApp
-</a> 
-            </div>
+
+              <div className="grid gap-3 sm:grid-cols-2">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full rounded-full bg-amber-300 px-7 py-4 text-center text-sm font-semibold text-black transition hover:bg-amber-200 disabled:opacity-60"
+                >
+                  {isSubmitting ? "Отправка..." : "Отправить заявку"}
+                </button>
+
+                <a
+                  href="https://wa.me/77072996264?text=Здравствуйте!%20Хочу%20обсудить%20мероприятие%20с%20Grunge%20Hotel."
+                  onClick={trackWhatsAppClick}
+                  className="w-full rounded-full border border-white/20 px-7 py-4 text-center text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
+                >
+                  Написать в WhatsApp
+                </a>
+              </div>
+
+              {submitMessage && (
+                <p className="text-sm text-white/70">{submitMessage}</p>
+              )}
+            </form>
           </div>
         </div>
       </section>
