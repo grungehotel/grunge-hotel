@@ -67,7 +67,7 @@ const cases = [
 const videoGallery = [
   {
     title: "Корпоративное выступление Grunge Hotel",
-    text: "Полноформатное live-видео, по которому можно оценить уровень группы, работу с залом и общий музыкальный масштаб выступления.",
+    text: "Полноформатное Promo-видео группы. На видео разные музыкальные форматы. Вокалист: Алан Салпагаров.",
     embedUrl: "https://www.youtube.com/embed/3AbyGBVosNA",
     href: "https://youtu.be/3AbyGBVosNA?si=qHYL9AtKZ46RcmSD",
   },
