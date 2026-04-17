@@ -90,9 +90,25 @@ const liveBandGallery = [
   "/images/ghmain7.jpg",
 ];
 
+const quartetGallery = [
+  "/images/quartet/quartet1.jpg",
+  "/images/quartet/quartet2.jpg",
+  "/images/quartet/quartet3.jpg",
+  "/images/quartet/quartet4.jpg",
+  "/images/quartet/quartet5.jpg",
+  "/images/quartet/quartet6.jpg",
+  "/images/quartet/quartet7.jpg",
+  "/images/quartet/quartet8.jpg",
+  "/images/quartet/quartet9.jpg",
+  "/images/quartet/quartet10.jpg",
+  "/images/quartet/quartet11.jpg",
+  "/images/quartet/quartet12.jpg",
+];
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [liveBandSlide, setLiveBandSlide] = useState(0);
+  const [quartetSlide, setQuartetSlide] = useState(0);
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -120,6 +136,18 @@ export default function Home() {
   const showNextLiveBandSlide = () => {
     setLiveBandSlide((prev) =>
       prev === liveBandGallery.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const showPrevQuartetSlide = () => {
+    setQuartetSlide((prev) =>
+      prev === 0 ? quartetGallery.length - 1 : prev - 1
+    );
+  };
+
+  const showNextQuartetSlide = () => {
+    setQuartetSlide((prev) =>
+      prev === quartetGallery.length - 1 ? 0 : prev + 1
     );
   };
 
@@ -574,46 +602,113 @@ export default function Home() {
       </section>
 
       <section className="border-y border-white/10 bg-white/[0.02]">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-[1.15fr_0.85fr] md:px-10 md:py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-[1fr_1fr] md:px-10 md:py-20">
           <div>
             <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">
-              Почему это удобно
+              Мужской квартет
             </p>
             <h2 className="font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">
-              Понятная коммуникация и управляемый результат
+              Мужской квартет для корпоративных и частных мероприятий
             </h2>
+            <div className="mt-6 space-y-5 text-sm leading-7 text-white/75 sm:text-base">
+              <p>
+                Grunge Hotel работает в формате мужского квартета как отдельное
+                решение для мероприятий, где важны качество живого выступления,
+                дисциплина на площадке и понятный рабочий процесс.
+              </p>
+              <p>
+                Этот формат подходит для корпоративов, свадеб и частных событий,
+                когда заказчику нужна живая группа с собранной программой,
+                сильной подачей и профессиональной организацией.
+              </p>
+              <p>
+                Группа работает со своим бэклайном и соблюдает агентские условия
+                сотрудничества: тайминг, подготовку к площадке, рабочую
+                коммуникацию и согласованный формат взаимодействия с
+                организатором.
+              </p>
+            </div>
 
-            <div className="mt-8 grid gap-4">
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {[
-                "Организатор понимает, что получит за деньги",
-                "Репертуар подстраивается под аудиторию, а не навязывается",
-                "Группа не выпадает из структуры вечера и работает в тайминге",
-                "Можно масштабировать задачу в production и техчасть",
+                "Мужской состав с сильной сценической подачей",
+                "Подходит для корпоративов, свадеб и частных мероприятий",
+                "Работа со своим бэклайном",
+                "Соблюдение агентских условий",
+                "Программа под задачу мероприятия",
+                "Понятная организация работы на площадке",
               ].map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-sm leading-7 text-white/75"
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-sm leading-7 text-white/80"
                 >
                   {item}
                 </div>
               ))}
             </div>
+
+            <div className="mt-8">
+              <a
+                href="https://wa.me/77072996264"
+                onClick={trackWhatsAppClick}
+                className="inline-flex rounded-full bg-amber-300 px-6 py-4 text-sm font-semibold text-black transition hover:bg-amber-200"
+              >
+                Запросить условия
+              </a>
+            </div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-            <p className="mb-4 text-sm text-white/60">Форматы состава</p>
-            <div className="grid gap-3">
-              {[
-                "Мужской квартет",
-                "Премиум-ансамбль с вокалисткой",
-                "Трибьют-форматы в отдельном разделе",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-white/10 px-4 py-4 text-sm text-white/80"
+          <div className="space-y-4">
+            <div className="overflow-hidden rounded-3xl border border-white/10 bg-black/30">
+              <img
+                src={quartetGallery[quartetSlide]}
+                alt={`Grunge Hotel quartet gallery ${quartetSlide + 1}`}
+                className="h-full max-h-[640px] w-full object-cover"
+              />
+            </div>
+
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={showPrevQuartetSlide}
+                  className="rounded-full border border-white/15 px-4 py-2 text-sm text-white transition hover:border-white/40 hover:bg-white/5"
                 >
-                  {item}
-                </div>
+                  ← Назад
+                </button>
+                <button
+                  type="button"
+                  onClick={showNextQuartetSlide}
+                  className="rounded-full border border-white/15 px-4 py-2 text-sm text-white transition hover:border-white/40 hover:bg-white/5"
+                >
+                  Вперёд →
+                </button>
+              </div>
+
+              <p className="text-xs text-white/50 sm:text-sm">
+                {quartetSlide + 1} / {quartetGallery.length}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-4 gap-3 sm:grid-cols-6">
+              {quartetGallery.map((image, index) => (
+                <button
+                  key={image}
+                  type="button"
+                  onClick={() => setQuartetSlide(index)}
+                  className={`overflow-hidden rounded-2xl border transition ${
+                    index === quartetSlide
+                      ? "border-amber-300"
+                      : "border-white/10 hover:border-white/30"
+                  }`}
+                  aria-label={`Показать фото квартета ${index + 1}`}
+                >
+                  <img
+                    src={image}
+                    alt={`Grunge Hotel quartet thumbnail ${index + 1}`}
+                    className="h-20 w-full object-cover"
+                  />
+                </button>
               ))}
             </div>
           </div>
