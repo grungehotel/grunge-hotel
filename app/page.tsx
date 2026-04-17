@@ -602,63 +602,73 @@ export default function Home() {
       </section>
 
       <section className="border-y border-white/10 bg-white/[0.02]">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-[1fr_1fr] md:px-10 md:py-20">
-          <div>
-            <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">
-              Мужской квартет
-            </p>
-            <h2 className="font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">
-              Мужской квартет для корпоративных и частных мероприятий
-            </h2>
-            <div className="mt-6 space-y-5 text-sm leading-7 text-white/75 sm:text-base">
-              <p>
-                Grunge Hotel работает в формате мужского квартета как отдельное
-                решение для мероприятий, где важны качество живого выступления,
-                дисциплина на площадке и понятный рабочий процесс.
-              </p>
-              <p>
-                Этот формат подходит для корпоративов, свадеб и частных событий,
-                когда заказчику нужна живая группа с собранной программой,
-                сильной подачей и профессиональной организацией.
-              </p>
-              <p>
-                Группа работает со своим бэклайном и соблюдает агентские условия
-                сотрудничества: тайминг, подготовку к площадке, рабочую
-                коммуникацию и согласованный формат взаимодействия с
-                организатором.
-              </p>
-            </div>
-
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {[
-                "Мужской состав с сильной сценической подачей",
-                "Подходит для корпоративов, свадеб и частных мероприятий",
-                "Работа со своим бэклайном",
-                "Соблюдение агентских условий",
-                "Программа под задачу мероприятия",
-                "Понятная организация работы на площадке",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-sm leading-7 text-white/80"
-                >
-                  {item}
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-20">
+          <div
+            className="relative overflow-hidden rounded-[2rem] border border-white/10"
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.78) 45%, rgba(0,0,0,0.52) 100%), url('/images/Quartetmain2.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <div className="grid gap-10 px-6 py-10 sm:px-8 md:grid-cols-[1fr_1fr] md:px-12 md:py-16">
+              <div>
+                <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">
+                  Мужской квартет
+                </p>
+                <h2 className="font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">
+                  Мужской квартет для корпоративных и частных мероприятий
+                </h2>
+                <div className="mt-6 space-y-5 text-sm leading-7 text-white/80 sm:text-base">
+                  <p>
+                    Grunge Hotel работает в формате мужского квартета как отдельное
+                    решение для мероприятий, где важны качество живого выступления,
+                    дисциплина на площадке и понятный рабочий процесс.
+                  </p>
+                  <p>
+                    Этот формат подходит для корпоративов, свадеб и частных событий,
+                    когда заказчику нужна живая группа с собранной программой,
+                    сильной подачей и профессиональной организацией.
+                  </p>
+                  <p>
+                    Группа работает со своим бэклайном и соблюдает агентские условия
+                    сотрудничества: тайминг, подготовку к площадке, рабочую
+                    коммуникацию и согласованный формат взаимодействия с
+                    организатором.
+                  </p>
                 </div>
-              ))}
-            </div>
 
-            <div className="mt-8">
-              <a
-                href="https://wa.me/77072996264"
-                onClick={trackWhatsAppClick}
-                className="inline-flex rounded-full bg-amber-300 px-6 py-4 text-sm font-semibold text-black transition hover:bg-amber-200"
-              >
-                Запросить условия
-              </a>
-            </div>
-          </div>
+                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                  {[
+                    "Мужской состав с сильной сценической подачей",
+                    "Подходит для корпоративов, свадеб и частных мероприятий",
+                    "Работа со своим бэклайном",
+                    "Соблюдение агентских условий",
+                    "Программа под задачу мероприятия",
+                    "Понятная организация работы на площадке",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-2xl border border-white/10 bg-black/25 px-5 py-4 text-sm leading-7 text-white/85 backdrop-blur-[2px]"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
 
-          <div className="space-y-4">
+                <div className="mt-8">
+                  <a
+                    href="https://wa.me/77072996264"
+                    onClick={trackWhatsAppClick}
+                    className="inline-flex rounded-full bg-amber-300 px-6 py-4 text-sm font-semibold text-black transition hover:bg-amber-200"
+                  >
+                    Запросить условия
+                  </a>
+                </div>
+              </div>
+
+              <div className="space-y-4">
             <div className="overflow-hidden rounded-3xl border border-white/10 bg-black/30">
               <img
                 src={quartetGallery[quartetSlide]}
@@ -710,6 +720,8 @@ export default function Home() {
                   />
                 </button>
               ))}
+            </div>
+              </div>
             </div>
           </div>
         </div>
