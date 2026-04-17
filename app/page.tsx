@@ -80,8 +80,19 @@ const partners = [
   "Coca-Cola",
 ];
 
+const liveBandGallery = [
+  "/images/ghmain1.jpg",
+  "/images/ghmain2.jpg",
+  "/images/ghmain3.jpg",
+  "/images/ghmain4.jpg",
+  "/images/ghmain5.jpg",
+  "/images/ghmain6.jpg",
+  "/images/ghmain7.jpg",
+];
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [liveBandSlide, setLiveBandSlide] = useState(0);
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -98,6 +109,18 @@ export default function Home() {
     if (typeof window !== "undefined" && window.ym) {
       window.ym(108573750, "reachGoal", "whatsapp_click");
     }
+  };
+
+  const showPrevLiveBandSlide = () => {
+    setLiveBandSlide((prev) =>
+      prev === 0 ? liveBandGallery.length - 1 : prev - 1
+    );
+  };
+
+  const showNextLiveBandSlide = () => {
+    setLiveBandSlide((prev) =>
+      prev === liveBandGallery.length - 1 ? 0 : prev + 1
+    );
   };
 
   const handleFormChange = (
@@ -436,12 +459,59 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-3xl border border-white/10">
-            <img
-              src="/images/live.jpg"
-              alt="Grunge Hotel live stage"
-              className="h-full w-full object-cover"
-            />
+          <div className="space-y-4">
+            <div className="overflow-hidden rounded-3xl border border-white/10 bg-black/30">
+              <img
+                src={liveBandGallery[liveBandSlide]}
+                alt={`Grunge Hotel live gallery ${liveBandSlide + 1}`}
+                className="h-full max-h-[640px] w-full object-cover"
+              />
+            </div>
+
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={showPrevLiveBandSlide}
+                  className="rounded-full border border-white/15 px-4 py-2 text-sm text-white transition hover:border-white/40 hover:bg-white/5"
+                >
+                  ← Назад
+                </button>
+                <button
+                  type="button"
+                  onClick={showNextLiveBandSlide}
+                  className="rounded-full border border-white/15 px-4 py-2 text-sm text-white transition hover:border-white/40 hover:bg-white/5"
+                >
+                  Вперёд →
+                </button>
+              </div>
+
+              <p className="text-xs text-white/50 sm:text-sm">
+                {liveBandSlide + 1} / {liveBandGallery.length}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-4 gap-3 sm:grid-cols-7">
+              {liveBandGallery.map((image, index) => (
+                <button
+                  key={image}
+                  type="button"
+                  onClick={() => setLiveBandSlide(index)}
+                  className={`overflow-hidden rounded-2xl border transition ${
+                    index === liveBandSlide
+                      ? "border-amber-300"
+                      : "border-white/10 hover:border-white/30"
+                  }`}
+                  aria-label={`Показать фото ${index + 1}`}
+                >
+                  <img
+                    src={image}
+                    alt={`Grunge Hotel thumbnail ${index + 1}`}
+                    className="h-20 w-full object-cover"
+                  />
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
