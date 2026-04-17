@@ -73,7 +73,7 @@ const videoGallery = [
   },
   {
     title: "Живая подача и энергия зала",
-    text: "Корпоративное мероприятие.",
+    text: "Корпоративное мероприятие. Отчетный Reels об одном из вечеров с группой.",
     embedUrl: "https://www.youtube.com/embed/PxHy7URcpD4",
     href: "https://youtube.com/shorts/PxHy7URcpD4?si=RYZVMBMVjRFRpuZM",
   },
