@@ -788,27 +788,39 @@ export default function Home() {
       </section>
 
       <section className="border-y border-white/10 bg-white/[0.02]">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-[0.9fr_1.1fr] md:px-10 md:py-20">
-          <div>
-            <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">
-              Фронтмен
-            </p>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl">
-              Алан Салпагаров — голос, который держит внимание зала
-            </h2>
-          </div>
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-20">
+          <div
+            className="relative overflow-hidden rounded-[2rem] border border-white/10"
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.72) 42%, rgba(0,0,0,0.45) 100%), url('/images/alan2.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <div className="grid gap-10 px-6 py-10 sm:px-8 md:grid-cols-[0.95fr_1.05fr] md:px-12 md:py-16">
+              <div>
+                <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">
+                  Фронтмен
+                </p>
+                <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl">
+                  Алан Салпагаров — голос, который держит внимание зала
+                </h2>
+              </div>
 
-          <div className="space-y-5 text-sm leading-7 text-white/75 sm:text-base">
-            <p>
-              У Grunge Hotel сильный фронтменский центр. Алан — это не просто
-              вокалист, а лицо группы и один из ключевых факторов, почему формат
-              работает и на корпоративах, и на свадьбах, и на концертных
-              площадках.
-            </p>
-            <p>
-              Широкий диапазон, мощная подача и умение держать внимание аудитории
-              усиливают весь проект: от камерного блока до плотного live-сета.
-            </p>
+              <div className="space-y-5 text-sm leading-7 text-white/80 sm:text-base">
+                <p>
+                  У Grunge Hotel сильный фронтменский центр. Алан — это не просто
+                  вокалист, а лицо группы и один из ключевых факторов, почему формат
+                  работает и на корпоративах, и на свадьбах, и на концертных
+                  площадках.
+                </p>
+                <p>
+                  Широкий диапазон, мощная подача и умение держать внимание аудитории
+                  усиливают весь проект: от камерного блока до плотного live-сета.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
