@@ -64,6 +64,27 @@ const cases = [
   },
 ];
 
+const videoGallery = [
+  {
+    title: "Live performance — YouTube",
+    text: "Полноформатное видео с живым выступлением Grunge Hotel.",
+    embedUrl: "https://www.youtube.com/embed/3AbyGBVosNA",
+    href: "https://youtu.be/3AbyGBVosNA?si=qHYL9AtKZ46RcmSD",
+  },
+  {
+    title: "Shorts — live moment #1",
+    text: "Короткий вертикальный фрагмент с живой подачей и энергией группы.",
+    embedUrl: "https://www.youtube.com/embed/PxHy7URcpD4",
+    href: "https://youtube.com/shorts/PxHy7URcpD4?si=RYZVMBMVjRFRpuZM",
+  },
+  {
+    title: "Shorts — live moment #2",
+    text: "Ещё один короткий live-фрагмент для быстрой оценки подачи и атмосферы.",
+    embedUrl: "https://www.youtube.com/embed/D9q61SpeCbM",
+    href: "https://youtube.com/shorts/D9q61SpeCbM?si=azETVF2m99LVQT9r",
+  },
+];
+
 const partners = [
   "Bereke Bank",
   "Kaspi Bank",
@@ -545,24 +566,53 @@ export default function Home() {
       </section>
 
       <section className="border-y border-white/10 bg-white/[0.02]">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 md:px-10 md:py-20">
-          <div>
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-20">
+          <div className="mb-10 max-w-3xl">
             <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">
-              Для кого
+              Видео-галерея
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl">
-              Работаем с теми, кому важен результат, а не просто музыка на фоне
+              Живое видео Grunge Hotel
             </h2>
+            <p className="mt-4 text-sm leading-7 text-white/70 sm:text-base">
+              Ниже — первые видео для портфолио: полное выступление и короткие
+              live-фрагменты, которые можно использовать как основу для видео-раздела
+              и дальнейшего наполнения сайта.
+            </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            {audiences.map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-white/10 px-5 py-5 text-white/85"
+          <div className="grid gap-6 lg:grid-cols-3">
+            {videoGallery.map((video) => (
+              <article
+                key={video.href}
+                className="overflow-hidden rounded-3xl border border-white/10 bg-neutral-900"
               >
-                {item}
-              </div>
+                <div className="aspect-[16/9] w-full bg-black">
+                  <iframe
+                    src={video.embedUrl}
+                    title={video.title}
+                    className="h-full w-full"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="space-y-4 p-5">
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">{video.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-white/70">{video.text}</p>
+                  </div>
+                  <a
+                    href={video.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex rounded-full border border-white/15 px-4 py-2 text-sm text-white transition hover:border-white/35 hover:bg-white/5"
+                  >
+                    Открыть на YouTube
+                  </a>
+                </div>
+              </article>
             ))}
           </div>
         </div>
