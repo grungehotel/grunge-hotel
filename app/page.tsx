@@ -66,20 +66,20 @@ const cases = [
 
 const videoGallery = [
   {
-    title: "Live performance — YouTube",
-    text: "Полноформатное видео с живым выступлением Grunge Hotel.",
+    title: "Корпоративное выступление Grunge Hotel",
+    text: "Полноформатное live-видео, по которому можно оценить уровень группы, работу с залом и общий музыкальный масштаб выступления.",
     embedUrl: "https://www.youtube.com/embed/3AbyGBVosNA",
     href: "https://youtu.be/3AbyGBVosNA?si=qHYL9AtKZ46RcmSD",
   },
   {
-    title: "Shorts — live moment #1",
-    text: "Короткий вертикальный фрагмент с живой подачей и энергией группы.",
+    title: "Живая подача и энергия зала",
+    text: "Короткий вертикальный фрагмент, который показывает плотную подачу, реакцию публики и атмосферу выступления вживую.",
     embedUrl: "https://www.youtube.com/embed/PxHy7URcpD4",
     href: "https://youtube.com/shorts/PxHy7URcpD4?si=RYZVMBMVjRFRpuZM",
   },
   {
-    title: "Shorts — live moment #2",
-    text: "Ещё один короткий live-фрагмент для быстрой оценки подачи и атмосферы.",
+    title: "Фрагмент live-программы",
+    text: "Ещё один короткий фрагмент для быстрой оценки сценической динамики, звучания группы и общего впечатления от live-формата.",
     embedUrl: "https://www.youtube.com/embed/D9q61SpeCbM",
     href: "https://youtube.com/shorts/D9q61SpeCbM?si=azETVF2m99LVQT9r",
   },
