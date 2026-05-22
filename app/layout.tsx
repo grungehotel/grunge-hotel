@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.grungehotel.com.kz"),
   title: "Grunge Hotel — группа на мероприятия и music production в Алматы",
   description:
     "Grunge Hotel — живая группа на корпоративы, свадьбы и частные события в Алматы. Сильный вокал, широкий репертуар, понятная работа с организатором и дополнительные production-услуги.",
