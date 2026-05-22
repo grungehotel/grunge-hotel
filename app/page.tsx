@@ -7,6 +7,7 @@ declare global {
 }
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const services = [
@@ -68,19 +69,19 @@ const videoGallery = [
   {
     title: "Корпоративное выступление Grunge Hotel",
     text: "Полноформатное Promo-видео группы. На видео разные музыкальные форматы. Вокалист: Алан Салпагаров.",
-    embedUrl: "https://www.youtube.com/embed/3AbyGBVosNA",
+    thumbnailUrl: "https://i.ytimg.com/vi/3AbyGBVosNA/hqdefault.jpg",
     href: "https://youtu.be/3AbyGBVosNA?si=qHYL9AtKZ46RcmSD",
   },
   {
     title: "Живая подача и энергия зала",
     text: "Корпоративное мероприятие. Отчетный Reels об одном из вечеров с группой.",
-    embedUrl: "https://www.youtube.com/embed/PxHy7URcpD4",
+    thumbnailUrl: "https://i.ytimg.com/vi/PxHy7URcpD4/hqdefault.jpg",
     href: "https://youtube.com/shorts/PxHy7URcpD4?si=RYZVMBMVjRFRpuZM",
   },
   {
     title: "Фрагмент live-программы",
     text: "Новогодний корпоратив компании VTB. На видео — живое исполнение группы.",
-    embedUrl: "https://www.youtube.com/embed/D9q61SpeCbM",
+    thumbnailUrl: "https://i.ytimg.com/vi/D9q61SpeCbM/hqdefault.jpg",
     href: "https://youtube.com/shorts/D9q61SpeCbM?si=azETVF2m99LVQT9r",
   },
 ];
@@ -224,13 +225,13 @@ export default function Home() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-10">
           <Link href="/" className="flex items-center gap-3">
-            <img
+            <Image
               src="/images/logo-white.png"
               alt="Grunge Hotel logo"
+              width={40}
+              height={40}
               className="h-10 w-10 object-contain"
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-              }}
+              priority
             />
             <div>
               <p className="font-serif text-lg leading-none">Grunge Hotel</p>
@@ -320,10 +321,13 @@ export default function Home() {
 
       <section className="relative min-h-screen overflow-hidden border-b border-white/10 pt-24 md:pt-28">
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/images/hero.jpg"
             alt="Grunge Hotel live performance"
-            className="h-full w-full object-cover"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
           />
         </div>
 
@@ -509,10 +513,13 @@ export default function Home() {
           </div>
 
           <div className="space-y-4">
-            <div className="overflow-hidden rounded-3xl border border-white/10 bg-black/30">
-              <img
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/30">
+              <Image
                 src={liveBandGallery[liveBandSlide]}
                 alt={`Grunge Hotel live gallery ${liveBandSlide + 1}`}
+                width={1600}
+                height={1067}
+                sizes="(max-width: 768px) 100vw, 45vw"
                 className="h-full max-h-[640px] w-full object-cover"
               />
             </div>
@@ -553,9 +560,12 @@ export default function Home() {
                   }`}
                   aria-label={`Показать фото ${index + 1}`}
                 >
-                  <img
+                  <Image
                     src={image}
                     alt={`Grunge Hotel thumbnail ${index + 1}`}
+                    width={240}
+                    height={160}
+                    sizes="(max-width: 640px) 25vw, 10vw"
                     className="h-20 w-full object-cover"
                   />
                 </button>
@@ -587,17 +597,27 @@ export default function Home() {
                 key={video.href}
                 className="overflow-hidden rounded-3xl border border-white/10 bg-neutral-900"
               >
-                <div className="aspect-[16/9] w-full bg-black">
-                  <iframe
-                    src={video.embedUrl}
-                    title={video.title}
-                    className="h-full w-full"
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
+                <a
+                  href={video.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group relative block aspect-[16/9] w-full overflow-hidden bg-black"
+                  aria-label={`Открыть видео: ${video.title}`}
+                >
+                  <Image
+                    src={video.thumbnailUrl}
+                    alt={video.title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    className="object-cover transition duration-300 group-hover:scale-[1.03]"
                   />
-                </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-2xl text-black shadow-2xl transition group-hover:scale-105">
+                      ▶
+                    </span>
+                  </div>
+                </a>
                 <div className="space-y-4 p-5">
                   <div>
                     <h3 className="text-xl font-semibold text-white">{video.title}</h3>
@@ -719,10 +739,13 @@ export default function Home() {
               </div>
 
               <div className="space-y-4">
-            <div className="overflow-hidden rounded-3xl border border-white/10 bg-black/30">
-              <img
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/30">
+              <Image
                 src={quartetGallery[quartetSlide]}
                 alt={`Grunge Hotel quartet gallery ${quartetSlide + 1}`}
+                width={1600}
+                height={1067}
+                sizes="(max-width: 768px) 100vw, 45vw"
                 className="h-full max-h-[640px] w-full object-cover"
               />
             </div>
@@ -763,9 +786,12 @@ export default function Home() {
                   }`}
                   aria-label={`Показать фото квартета ${index + 1}`}
                 >
-                  <img
+                  <Image
                     src={image}
                     alt={`Grunge Hotel quartet thumbnail ${index + 1}`}
+                    width={240}
+                    height={160}
+                    sizes="(max-width: 640px) 25vw, 10vw"
                     className="h-20 w-full object-cover"
                   />
                 </button>
