@@ -16,12 +16,24 @@ const services = [
     title: "Живая группа",
     text: "Главный формат Grunge Hotel для корпоративов, свадеб и частных событий: сильный вокал, широкий репертуар, адаптация под аудиторию и понятная работа с организатором.",
     price: "от 500 000 ₸",
+    href: "/live-band-almaty",
+    linkLabel: "Подробнее",
   },
   {
-    id: "tribute-shows",
-    title: "Трибьют-шоу",
-    text: "Отдельные концертные форматы и тематические программы для площадок, спецсобытий и клиентов, которым нужен яркий музыкальный акцент.",
+    id: "corporate-band",
+    title: "Группа на корпоратив",
+    text: "Отдельная посадочная под B2B и корпоративный сегмент: работа с компаниями, event-агентствами и брендовыми мероприятиями.",
     price: "по запросу",
+    href: "/corporate-band-almaty",
+    linkLabel: "Подробнее",
+  },
+  {
+    id: "wedding-band",
+    title: "Группа на свадьбу",
+    text: "Живая программа для свадебного вечера: сильные музыкальные блоки, танцпол и работа под гостей и тайминг мероприятия.",
+    price: "по запросу",
+    href: "/wedding-band-almaty",
+    linkLabel: "Подробнее",
   },
   {
     id: "event-production",
@@ -40,6 +52,8 @@ const services = [
     title: "Студия",
     text: "Запись вокала, барабанов, группы целиком, поканальная запись и студийные задачи как отдельное направление проекта.",
     price: "прайс отдельно",
+    href: "/studio-recording-almaty",
+    linkLabel: "Смотреть прайс",
   },
 ];
 
@@ -245,9 +259,26 @@ export default function Home() {
             <a href="#live-band" className="hover:text-white">
               Живая группа
             </a>
-            <a href="#services" className="hover:text-white">
-              Услуги
-            </a>
+            <div className="group relative">
+              <button type="button" className="flex items-center gap-2 transition hover:text-white">
+                Услуги
+                <span className="text-xs text-white/50">▾</span>
+              </button>
+              <div className="invisible absolute left-0 top-full mt-3 w-72 translate-y-2 rounded-3xl border border-white/10 bg-black/95 p-2 opacity-0 shadow-2xl transition duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                <a href="/live-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">
+                  Живая группа в Алматы
+                </a>
+                <a href="/corporate-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">
+                  Группа на корпоратив
+                </a>
+                <a href="/wedding-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">
+                  Группа на свадьбу
+                </a>
+                <a href="/studio-recording-almaty" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">
+                  Студия звукозаписи
+                </a>
+              </div>
+            </div>
             <a href="#cases" className="hover:text-white">
               Кейсы
             </a>
@@ -283,13 +314,23 @@ export default function Home() {
               >
                 Живая группа
               </a>
-              <a
-                href="#services"
-                className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
-                onClick={() => setMenuOpen(false)}
-              >
-                Услуги
-              </a>
+              <div className="mt-1 rounded-2xl border border-white/10 p-2">
+                <p className="px-2 pb-2 pt-1 text-xs uppercase tracking-[0.2em] text-white/40">
+                  Услуги
+                </p>
+                <a href="/live-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>
+                  Живая группа в Алматы
+                </a>
+                <a href="/corporate-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>
+                  Группа на корпоратив
+                </a>
+                <a href="/wedding-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>
+                  Группа на свадьбу
+                </a>
+                <a href="/studio-recording-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>
+                  Студия звукозаписи
+                </a>
+              </div>
               <a
                 href="#cases"
                 className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
@@ -666,6 +707,14 @@ export default function Home() {
                 </span>
               </div>
               <p className="mt-4 text-sm leading-7 text-white/70">{item.text}</p>
+              {item.href && item.linkLabel ? (
+                <a
+                  href={item.href}
+                  className="mt-5 inline-flex rounded-full border border-white/15 px-4 py-2 text-sm text-white transition hover:border-white/35 hover:bg-white/5"
+                >
+                  {item.linkLabel}
+                </a>
+              ) : null}
             </article>
           ))}
         </div>

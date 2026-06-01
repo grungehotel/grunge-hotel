@@ -4,12 +4,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const url = "https://www.grungehotel.com.kz";
   const lastModified = new Date();
 
-  return [
-    {
-      url,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 1,
-    },
+  const pages = [
+    "",
+    "/live-band-almaty",
+    "/corporate-band-almaty",
+    "/wedding-band-almaty",
+    "/studio-recording-almaty",
   ];
+
+  return pages.map((path, index) => ({
+    url: `${url}${path}`,
+    lastModified,
+    changeFrequency: "weekly",
+    priority: index === 0 ? 1 : 0.85,
+  }));
 }
