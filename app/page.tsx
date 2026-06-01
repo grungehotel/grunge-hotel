@@ -279,7 +279,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <a href="#cases" className="hover:text-white">
+            <a href="#video-gallery" className="hover:text-white">
               Кейсы
             </a>
             <a href="#contact" className="hover:text-white">
@@ -332,7 +332,7 @@ export default function Home() {
                 </a>
               </div>
               <a
-                href="#cases"
+                href="#video-gallery"
                 className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
                 onClick={() => setMenuOpen(false)}
               >
@@ -616,7 +616,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-white/[0.02]">
+      <section id="video-gallery" className="border-y border-white/10 bg-white/[0.02]">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-20">
           <div className="mb-10 max-w-3xl">
             <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">
