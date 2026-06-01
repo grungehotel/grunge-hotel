@@ -11,16 +11,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const serviceLinks = [
-  { href: "/live-band-almaty", label: "Живая группа" },
-  { href: "/corporate-band-almaty", label: "Корпоративы" },
-  { href: "/wedding-band-almaty", label: "Свадьбы" },
-  { href: "/studio-recording-almaty", label: "Студия" },
-];
-
-const navLinks = [
-  { href: "/", label: "Главная" },
-  { href: "/#cases", label: "Кейсы" },
-  { href: "/#contact", label: "Контакты" },
+  { href: "/live-band-almaty", label: "Живая группа в Алматы" },
+  { href: "/corporate-band-almaty", label: "Группа на корпоратив" },
+  { href: "/wedding-band-almaty", label: "Группа на свадьбу" },
+  { href: "/studio-recording-almaty", label: "Студия звукозаписи" },
 ];
 
 export default function PageNav() {
@@ -52,18 +46,12 @@ export default function PageNav() {
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-5 text-sm text-white/70 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="hover:text-white transition"
-            >
-              {link.label}
-            </Link>
-          ))}
+        <nav className="hidden items-center gap-6 text-sm text-white/70 md:flex">
+          <a href="/#live-band" className="hover:text-white">
+            Живая группа
+          </a>
 
-          <div className="group relative">
+          <div className="group relative py-2">
             <button
               type="button"
               className="flex items-center gap-2 transition hover:text-white"
@@ -72,25 +60,33 @@ export default function PageNav() {
               <span className="text-xs text-white/50">▾</span>
             </button>
 
-            <div className="invisible absolute right-0 top-full mt-3 w-64 translate-y-2 rounded-3xl border border-white/10 bg-black/95 p-2 opacity-0 shadow-2xl transition duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-              {serviceLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white"
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <div className="invisible absolute left-0 top-full w-72 pt-1 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <div className="rounded-3xl border border-white/10 bg-black/95 p-2 shadow-2xl">
+                {serviceLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
 
+          <a href="/#cases" className="hover:text-white">
+            Кейсы
+          </a>
+          <a href="/#contact" className="hover:text-white">
+            Контакты
+          </a>
           <a
             href="https://wa.me/77072996264"
             onClick={trackWhatsAppClick}
             className="rounded-full border border-white/15 px-5 py-2.5 text-white transition hover:border-white/40 hover:bg-white/5"
           >
-            Связаться
+            Связаться с менеджером
           </a>
         </nav>
 
@@ -107,18 +103,15 @@ export default function PageNav() {
       {menuOpen && (
         <div className="border-t border-white/10 bg-black/95 md:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
+            <a
+              href="/#live-band"
+              className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
+              onClick={() => setMenuOpen(false)}
+            >
+              Живая группа
+            </a>
 
-            <div className="mt-2 rounded-2xl border border-white/10 p-2">
+            <div className="mt-1 rounded-2xl border border-white/10 p-2">
               <p className="px-2 pb-2 pt-1 text-xs uppercase tracking-[0.2em] text-white/40">
                 Услуги
               </p>
@@ -135,6 +128,20 @@ export default function PageNav() {
             </div>
 
             <a
+              href="/#cases"
+              className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
+              onClick={() => setMenuOpen(false)}
+            >
+              Кейсы
+            </a>
+            <a
+              href="/#contact"
+              className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
+              onClick={() => setMenuOpen(false)}
+            >
+              Контакты
+            </a>
+            <a
               href="https://wa.me/77072996264"
               className="mt-2 rounded-full bg-amber-300 px-5 py-3 text-center text-sm font-semibold text-black"
               onClick={() => {
@@ -142,7 +149,7 @@ export default function PageNav() {
                 setMenuOpen(false);
               }}
             >
-              Связаться в WhatsApp
+              Связаться с менеджером
             </a>
           </div>
         </div>
