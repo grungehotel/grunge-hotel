@@ -1,14 +1,19 @@
 import fs from "node:fs";
 import path from "node:path";
 
-function resolvePagePath(slug?: string[]) {
-  const baseDir = path.join(process.cwd(), "data", "refil", "pages");
+const REFIL_PAGES_DIR = path.join(
+  /* turbopackIgnore: true */ process.cwd(),
+  "data",
+  "refil",
+  "pages"
+);
 
+function resolvePagePath(slug?: string[]) {
   if (!slug || slug.length === 0) {
-    return path.join(baseDir, "index.html");
+    return path.join(REFIL_PAGES_DIR, "index.html");
   }
 
-  return path.join(baseDir, ...slug, "index.html");
+  return path.join(REFIL_PAGES_DIR, ...slug, "index.html");
 }
 
 export async function GET(
