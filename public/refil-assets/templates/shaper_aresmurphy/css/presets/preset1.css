@@ -1,0 +1,89 @@
+body {
+  background-color: #222222;
+  color: #ffffff;
+}
+a {
+  color: #02a222;
+}
+a:hover {
+  color: #017017;
+}
+.sp-megamenu-parent >li.active>a,
+.sp-megamenu-parent >li:hover>a {
+  color: #02a222;
+}
+.sp-megamenu-parent .sp-dropdown li.sp-menu-item >a:hover {
+  background: #02a222;
+}
+.sp-megamenu-parent .sp-dropdown li.sp-menu-item.active>a {
+  color: #02a222;
+}
+#offcanvas-toggler >i {
+  color: #ffffff;
+}
+#offcanvas-toggler >i:hover {
+  color: #02a222;
+}
+ul.social-icons >li a:hover {
+  color: #02a222;
+}
+.layout-boxed .body-innerwrapper {
+  background: #222222;
+}
+.sp-module ul >li >a {
+  color: #ffffff;
+}
+.sp-module ul >li >a:hover {
+  color: #02a222;
+}
+.sp-module .latestnews >div >a {
+  color: #ffffff;
+}
+.sp-module .latestnews >div >a:hover {
+  color: #02a222;
+}
+.sp-module .tagscloud .tag-name:hover {
+  background: #02a222;
+}
+.search .btn-toolbar button {
+  background: #02a222;
+}
+.post-format {
+  background: #02a222;
+}
+.voting-symbol span.star.active:before {
+  color: #02a222;
+}
+.sp-rating span.star:hover:before,
+.sp-rating span.star:hover ~ span.star:before {
+  color: #017017;
+}
+.entry-link,
+.entry-quote {
+  background: #02a222;
+}
+blockquote {
+  border-color: #02a222;
+}
+.carousel-left:hover,
+.carousel-right:hover {
+  background: #02a222;
+}
+#sp-footer {
+  /* background: #02a222; */
+}
+.sp-comingsoon body {
+  background-color: #02a222;
+}
+.pagination>.active>a,
+.pagination>.active>span {
+  border-color: #02a222;
+  background-color: #02a222;
+}
+.pagination>.active>a:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:hover,
+.pagination>.active>span:focus {
+  border-color: #02a222;
+  background-color: #02a222;
+}
