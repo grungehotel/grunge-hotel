@@ -6,11 +6,10 @@ export function middleware(request: NextRequest) {
 
   if (host === "refil.grungehotel.com.kz") {
     const url = request.nextUrl.clone();
+    const pathname = url.pathname === "/" ? "" : url.pathname;
 
-    if (url.pathname === "/") {
-      url.pathname = "/refil-home";
-      return NextResponse.rewrite(url);
-    }
+    url.pathname = `/refil-site${pathname}`;
+    return NextResponse.rewrite(url);
   }
 
   return NextResponse.next();
