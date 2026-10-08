@@ -14,31 +14,31 @@ const workLinks = [
   {
     platform: "Spotify",
     service: "Сведение / мастеринг",
-    label: "Drugs n Foks — Opening",
+    label: "Drugs’n’Foks — Opening",
     href: "https://open.spotify.com/album/07YwPc6FPGSGUihHYQ3YsX?si=oz23ove5TkWo3elJeJFBFA",
   },
   {
     platform: "YouTube",
     service: "Запись вокала / сведение / мастеринг",
-    label: "Работа 02",
+    label: "Анастасия Россошанская — Electric Hearts",
     href: "https://www.youtube.com/watch?v=otsIf4RLOlE",
   },
   {
     platform: "YouTube",
     service: "Запись вокала / сведение / мастеринг",
-    label: "Работа 03",
+    label: "Анастасия Россошанская — На веки вместе",
     href: "https://www.youtube.com/watch?v=T1T7A9rIkyw",
   },
   {
     platform: "Spotify",
     service: "Сведение / мастеринг",
-    label: "Работа 04",
+    label: "AsVein — Kebab",
     href: "https://open.spotify.com/track/3gR6V4ZlbnwZkmfFdrgFrg?si=b15e865d77c14540",
   },
   {
     platform: "Spotify",
     service: "Сведение / мастеринг",
-    label: "Grunge Hotel — I L Y.",
+    label: "Grunge Hotel — I. L. Y.",
     href: "https://open.spotify.com/track/1GZL7Ui6HAVislapaDNmSu?si=5b5035578cdc4942",
   },
   {
@@ -50,14 +50,32 @@ const workLinks = [
   {
     platform: "Spotify",
     service: "Аранжировка / запись всех инструментов / сведение / мастеринг",
-    label: "Полный продакшен — работа 07.1",
+    label: "Ильяс Желдыбаев — Не до войны",
     href: "https://open.spotify.com/track/7Jr1wCLQ9d4KovvMMM334M?si=f0abe6c0e5aa4e27",
   },
   {
     platform: "Spotify",
     service: "Аранжировка / запись всех инструментов / сведение / мастеринг",
-    label: "Полный продакшен — работа 07.2",
+    label: "Ильяс Желдыбаев — Лодочка",
     href: "https://open.spotify.com/track/5pTLQ4EKnvPYwpfZcHMUOO?si=6195964d07164423",
+  },
+  {
+    platform: "Spotify",
+    service: "Сведение / мастеринг / запись вокала",
+    label: "Drugs’n’Foks ft. Eric Tsoy",
+    href: "https://open.spotify.com/track/7FyMpWHwpPMeljpacfdKJC?si=0aeb733685f24717",
+  },
+  {
+    platform: "Instagram",
+    service: "Сведение / мастеринг",
+    label: "Säwlet Nurcapağat — Bobby McFerrin — Don’t Worry, Be Happy (Qazaq cover)",
+    href: "https://www.instagram.com/reel/DWMX9vuCFe1/?igsh=MXdsb3JkcmJxOWd6dw==",
+  },
+  {
+    platform: "Instagram",
+    service: "Сведение / мастеринг",
+    label: "Doom 3 — Main Theme (Full Band Cover)",
+    href: "https://www.instagram.com/reel/C_cpd9WNiuZ/?igsh=MXEweHF3b2EzMGtlZA==",
   },
 ];
 
@@ -200,7 +218,7 @@ export default function AlanAudioPage() {
           </div>
           <div>
             <p className="text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">Проект начинается с разговора</p>
-            <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-none sm:text-5xl">Расскажи, каким должен быть результат. Остальное разберём по дороге.</h2>
+            <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-none sm:text-5xl">Расскажи, каким должен быть результат. Остальное разберём по пути.</h2>
             <a href="#contact" className="mt-8 inline-flex rounded-full bg-amber-300 px-6 py-4 text-sm font-semibold text-black transition hover:bg-amber-200">Оставить заявку</a>
           </div>
         </div>
