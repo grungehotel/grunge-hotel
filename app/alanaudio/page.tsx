@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import PageNav from "../components/PageNav";
-import ContactSection from "../components/ContactSection";
+import ProductionContactSection from "../components/ProductionContactSection";
 import PageFooter from "../components/PageFooter";
 
 export const metadata: Metadata = {
@@ -224,7 +224,7 @@ export default function AlanAudioPage() {
         </div>
       </section>
 
-      <ContactSection />
+      <ProductionContactSection />
       <PageFooter />
     </main>
   );

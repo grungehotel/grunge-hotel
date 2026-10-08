@@ -15,17 +15,28 @@ export async function POST(req: Request) {
       );
     }
 
-    const { name, phone, date, format, comment } = await req.json();
+    const { name, phone, date, format, comment, requestType, contact, service, trackLink, deadline } = await req.json();
 
-    const text = [
-      "Новая заявка с сайта Grunge Hotel",
-      "",
-      `Имя: ${name || "-"}`,
-      `Телефон / WhatsApp: ${phone || "-"}`,
-      `Дата мероприятия: ${date || "-"}`,
-      `Формат мероприятия: ${format || "-"}`,
-      `Комментарий: ${comment || "-"}`,
-    ].join("\n");
+    const text = requestType === "production"
+      ? [
+          "Новый запрос на продакшн — Alan Audio",
+          "",
+          `Имя: ${name || "-"}`,
+          `Контакт: ${contact || "-"}`,
+          `Услуга: ${service || "-"}`,
+          `Ссылка на материал: ${trackLink || "-"}`,
+          `Желаемый срок: ${deadline || "-"}`,
+          `Задача / комментарий: ${comment || "-"}`,
+        ].join("\n")
+      : [
+          "Новая заявка с сайта Grunge Hotel",
+          "",
+          `Имя: ${name || "-"}`,
+          `Телефон / WhatsApp: ${phone || "-"}`,
+          `Дата мероприятия: ${date || "-"}`,
+          `Формат мероприятия: ${format || "-"}`,
+          `Комментарий: ${comment || "-"}`,
+        ].join("\n");
 
     const response = await fetch(
       `https://api.telegram.org/bot${tgToken}/sendMessage`,
