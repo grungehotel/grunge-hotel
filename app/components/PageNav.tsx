@@ -15,6 +15,7 @@ const serviceLinks = [
   { href: "/corporate-band-almaty", label: "Группа на корпоратив" },
   { href: "/wedding-band-almaty", label: "Группа на свадьбу" },
   { href: "/studio-recording-almaty", label: "Студия звукозаписи" },
+  { href: "/alanaudio", label: "Алан Салпагаров — аудиоинженер" },
 ];
 
 export default function PageNav() {

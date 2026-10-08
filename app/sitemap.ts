@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/corporate-band-almaty",
     "/wedding-band-almaty",
     "/studio-recording-almaty",
+    "/alanaudio",
   ];
 
   return pages.map((path, index) => ({
