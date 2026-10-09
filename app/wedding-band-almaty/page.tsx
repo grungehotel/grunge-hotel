@@ -1,6 +1,8 @@
 import ServiceLandingPage, { buildMetadata } from "../components/ServiceLandingPage";
 
 export const metadata = buildMetadata({
+  pathname: "/wedding-band-almaty",
+  image: "/images/landing/wedding-gh8.jpg",
   title: "Группа на свадьбу в Алматы — Grunge Hotel",
   description:
     "Группа на свадьбу в Алматы: живая музыка для свадебного вечера, танцпола и сильных моментов программы. Grunge Hotel — репертуар под гостей и работа в связке с организатором.",
@@ -9,6 +11,7 @@ export const metadata = buildMetadata({
 export default function WeddingBandAlmatyPage() {
   return (
     <ServiceLandingPage
+      pathname="/wedding-band-almaty"
       eyebrow="wedding band · almaty · live music"
       title="Группа на свадьбу в Алматы, которая держит зал и не ломает темп вечера"
       description="Grunge Hotel — живая группа для свадеб в Алматы: музыкальные блоки под настроение гостей, понятная работа с организатором и живой сет, который действительно работает на танцпол."

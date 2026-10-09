@@ -3,11 +3,21 @@ import type { Metadata } from "next";
 import PageNav from "../components/PageNav";
 import ProductionContactSection from "../components/ProductionContactSection";
 import PageFooter from "../components/PageFooter";
+import StructuredData, { siteUrl } from "../components/StructuredData";
 
 export const metadata: Metadata = {
   title: "Алан Салпагаров — аудиоинженер и композитор | Almaty",
   description:
     "Алан Салпагаров — аудиоинженер и композитор из Алматы. Сведение, мастеринг, аранжировки и музыка под задачу.",
+  alternates: { canonical: "/alanaudio" },
+  openGraph: {
+    type: "profile",
+    url: "/alanaudio",
+    title: "Алан Салпагаров — аудиоинженер и композитор | Almaty",
+    description: "Сведение, мастеринг, аранжировки и музыка под задачу.",
+    images: [{ url: "/images/alan.jpg", alt: "Алан Салпагаров" }],
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 const workLinks = [
@@ -80,8 +90,31 @@ const workLinks = [
 ];
 
 export default function AlanAudioPage() {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Алан Салпагаров",
+      jobTitle: "Аудиоинженер и композитор",
+      url: `${siteUrl}/alanaudio`,
+      image: `${siteUrl}/images/alan.jpg`,
+      worksFor: { "@type": "Organization", name: "Grunge Hotel", url: siteUrl },
+      address: { "@type": "PostalAddress", addressLocality: "Алматы", addressCountry: "KZ" },
+      knowsAbout: ["Сведение", "Мастеринг", "Аранжировка", "Запись вокала", "Композиция"],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Главная", item: siteUrl },
+        { "@type": "ListItem", position: 2, name: "Алан Салпагаров — аудиоинженер", item: `${siteUrl}/alanaudio` },
+      ],
+    },
+  ];
+
   return (
     <main className="bg-neutral-950 text-white">
+      <StructuredData data={structuredData} />
       <PageNav />
 
       <section className="relative overflow-hidden border-b border-white/10 pt-24 md:pt-28">

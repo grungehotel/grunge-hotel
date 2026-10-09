@@ -1,6 +1,8 @@
 import ServiceLandingPage, { buildMetadata } from "../components/ServiceLandingPage";
 
 export const metadata = buildMetadata({
+  pathname: "/corporate-band-almaty",
+  image: "/images/landing/corporate-redcat.jpg",
   title: "Группа на корпоратив в Алматы — Grunge Hotel",
   description:
     "Группа на корпоратив в Алматы: живое выступление для компаний, брендов и закрытых событий. Grunge Hotel — сильная программа, понятная коммуникация и работа под тайминг вечера.",
@@ -9,6 +11,7 @@ export const metadata = buildMetadata({
 export default function CorporateBandAlmatyPage() {
   return (
     <ServiceLandingPage
+      pathname="/corporate-band-almaty"
       eyebrow="corporate band · almaty · b2b events"
       title="Группа на корпоратив в Алматы для компаний, которым нужен уверенный live-результат"
       description="Grunge Hotel работает на корпоративных мероприятиях как музыкальный подрядчик: живой состав, адаптация под публику, координация с организатором и понятный рабочий процесс."

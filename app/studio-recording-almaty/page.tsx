@@ -1,6 +1,8 @@
 import ServiceLandingPage, { buildMetadata } from "../components/ServiceLandingPage";
 
 export const metadata = buildMetadata({
+  pathname: "/studio-recording-almaty",
+  image: "/images/landing/studio-grudge-photo.jpg",
   title: "Студия звукозаписи в Алматы — Grunge Hotel",
   description:
     "Студия звукозаписи в Алматы: запись вокала, барабанов, группы целиком и поканальная запись. Grunge Hotel Studio — понятный прайс и рабочий продакшн-процесс.",
@@ -9,6 +11,7 @@ export const metadata = buildMetadata({
 export default function StudioRecordingAlmatyPage() {
   return (
     <ServiceLandingPage
+      pathname="/studio-recording-almaty"
       eyebrow="studio recording · almaty"
       title="Студия звукозаписи в Алматы для вокала, барабанов и записи группы целиком"
       description="Студийное направление Grunge Hotel: запись вокала, барабанов, группы целиком и поканальная сессия. Подходит артистам, группам и проектам, которым нужен понятный рабочий процесс и прозрачная стоимость."
@@ -16,7 +19,7 @@ export default function StudioRecordingAlmatyPage() {
       heroAlt="Grunge Hotel studio recording in Almaty"
       intro={[
         "Студия — это отдельное направление Grunge Hotel для артистов и групп, которым нужна запись без лишней путаницы: понятный формат, прозрачный прайс и нормальная рабочая коммуникация.",
-        "Можно записать вокал, барабаны, группу целиком или собрать поканальную сессию под более плоткий и контролируемый результат. Отдельно доступно сведение.",
+        "Можно записать вокал, барабаны, группу целиком или собрать поканальную сессию под более плотный и контролируемый результат. Отдельно доступно сведение.",
       ]}
       bullets={[
         "Запись вокала по часам",

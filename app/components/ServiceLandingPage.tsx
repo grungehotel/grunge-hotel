@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import PageNav from "./PageNav";
 import ContactSection from "./ContactSection";
 import PageFooter from "./PageFooter";
+import StructuredData, { siteUrl } from "./StructuredData";
 
 type Bullet = string;
 
@@ -10,6 +11,7 @@ type ServiceLandingPageProps = {
   eyebrow: string;
   title: string;
   description: string;
+  pathname: string;
   heroImage: string;
   heroAlt: string;
   ctaPrimary?: string;
@@ -26,19 +28,26 @@ type ServiceLandingPageProps = {
 export function buildMetadata({
   title,
   description,
+  pathname,
+  image = "/images/hero.jpg",
 }: {
   title: string;
   description: string;
+  pathname: string;
+  image?: string;
 }): Metadata {
   return {
     title,
     description,
+    alternates: { canonical: pathname },
     openGraph: {
       title,
       description,
       type: "website",
-      url: "https://www.grungehotel.com.kz",
+      url: pathname,
+      images: [{ url: image, alt: title }],
     },
+    twitter: { card: "summary_large_image" },
   };
 }
 
@@ -46,6 +55,7 @@ export default function ServiceLandingPage({
   eyebrow,
   title,
   description,
+  pathname,
   heroImage,
   heroAlt,
   ctaPrimary = "Связаться с менеджером",
@@ -60,9 +70,42 @@ export default function ServiceLandingPage({
 }: ServiceLandingPageProps) {
   const hasPricing = Boolean(pricingItems?.length);
   const hasFaq = Boolean(faq?.length);
+  const pageUrl = `${siteUrl}${pathname}`;
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: title,
+      description,
+      url: pageUrl,
+      image: `${siteUrl}${heroImage}`,
+      areaServed: { "@type": "City", name: "Алматы" },
+      provider: { "@type": "MusicGroup", name: "Grunge Hotel", url: siteUrl },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Главная", item: siteUrl },
+        { "@type": "ListItem", position: 2, name: title, item: pageUrl },
+      ],
+    },
+    ...(hasFaq
+      ? [{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faq?.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }]
+      : []),
+  ];
 
   return (
     <main className="bg-neutral-950 text-white">
+      <StructuredData data={structuredData} />
       <PageNav />
 
       <section className="relative min-h-[86vh] overflow-hidden border-b border-white/10 pt-24 md:pt-28">

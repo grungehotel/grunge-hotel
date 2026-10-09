@@ -1,6 +1,7 @@
 import Script from "next/script";
 import type { Metadata } from "next";
 import "./globals.css";
+import StructuredData, { organizationSchema } from "./components/StructuredData";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.grungehotel.com.kz"),
@@ -16,6 +17,18 @@ export const metadata: Metadata = {
     "event production Алматы",
     "музыкальное сопровождение мероприятий",
   ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    url: "/",
+    siteName: "Grunge Hotel",
+    title: "Grunge Hotel — группа на мероприятия и music production в Алматы",
+    description:
+      "Живая группа на корпоративы, свадьбы и частные события в Алматы.",
+    images: [{ url: "/images/hero.jpg", width: 1200, height: 630, alt: "Grunge Hotel" }],
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({
@@ -26,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body>
+        <StructuredData data={organizationSchema} />
         {children}
 
         <Script id="yandex-metrika" strategy="afterInteractive">

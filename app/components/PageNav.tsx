@@ -16,6 +16,12 @@ const serviceLinks = [
   { href: "/wedding-band-almaty", label: "Группа на свадьбу" },
   { href: "/studio-recording-almaty", label: "Студия звукозаписи" },
   { href: "/alanaudio", label: "Алан Салпагаров — аудиоинженер" },
+  { href: "/cover-band-almaty", label: "Кавер-группа в Алматы" },
+  { href: "/new-year-corporate-band-almaty", label: "Группа на новогодний корпоратив" },
+  { href: "/musicians-for-corporate-almaty", label: "Музыканты на корпоратив" },
+  { href: "/mixing-mastering-almaty", label: "Сведение и мастеринг" },
+  { href: "/arrangement-almaty", label: "Аранжировка песни" },
+  { href: "/audio-engineer-almaty", label: "Аудиоинженер в Алматы" },
 ];
 
 export default function PageNav() {
