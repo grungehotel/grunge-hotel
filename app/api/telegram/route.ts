@@ -64,6 +64,42 @@ export async function POST(req: Request) {
       );
     }
 
+    if (requestType === "production") {
+      const resendKey = process.env.RESEND_API_KEY;
+
+      if (!resendKey) {
+        return NextResponse.json(
+          { ok: false, error: "RESEND_API_KEY is missing" },
+          { status: 500 }
+        );
+      }
+
+      const emailResponse = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${resendKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: "Alan Audio <forms@grungehotel.com.kz>",
+          to: ["grungehotels@gmail.com"],
+          subject: `Новый запрос на продакшн — ${name || "без имени"}`,
+          text,
+        }),
+      });
+
+      if (!emailResponse.ok) {
+        const emailResult = await emailResponse.json().catch(() => null);
+        return NextResponse.json(
+          {
+            ok: false,
+            error: emailResult?.message || "Email delivery failed",
+          },
+          { status: 500 }
+        );
+      }
+    }
+
     return NextResponse.json({ ok: true });
   } catch (error) {
     return NextResponse.json(
