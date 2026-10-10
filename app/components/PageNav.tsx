@@ -43,9 +43,18 @@ export default function PageNav() {
             alt="Grunge Hotel logo"
             width={40}
             height={40}
-            className="h-10 w-10 object-contain"
+            className="site-logo-dark h-10 w-10 object-contain"
             priority
-          />
+/>
+<Image
+            src="/images/logo-light.png"
+            alt=""
+            aria-hidden="true"
+            width={40}
+            height={40}
+            className="site-logo-light h-10 w-10 object-contain"
+            priority
+/>
           <div>
             <p className="font-serif text-lg leading-none">Grunge Hotel</p>
             <p className="text-[10px] uppercase tracking-[0.28em] text-white/50 sm:text-xs">

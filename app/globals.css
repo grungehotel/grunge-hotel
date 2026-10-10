@@ -43,7 +43,9 @@ html[data-theme="light"] [class*="bg-amber-"] { background-color: #b91c1c !impor
 html[data-theme="light"] [class*="text-amber-"] { color: #b91c1c !important; }
 html[data-theme="light"] .hover\:bg-white\/5:hover, html[data-theme="light"] .hover\:bg-white\/10:hover { background-color: rgb(185 28 28 / .08) !important; }
 html[data-theme="light"] .hover\:text-white:hover { color: #b91c1c !important; }
-html[data-theme="light"] img[src="/images/logo-white.png"] { content: url("/images/logo-light.png"); filter: none; }
+.site-logo-light { display: none; }
+html[data-theme="light"] .site-logo-dark { display: none; }
+html[data-theme="light"] .site-logo-light { display: block; }
 html[data-theme="light"] .photo-contrast-copy { color: #fff !important; text-shadow: 0 2px 16px rgb(0 0 0 / .8); }
 html[data-theme="light"] .photo-contrast-copy [class*="text-white/"] { color: rgb(255 255 255 / .9) !important; }
 html[data-theme="light"] .photo-contrast-copy [class*="text-amber-"] { color: #fca5a5 !important; }
