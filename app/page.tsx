@@ -968,7 +968,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-white/[0.02]">
+      <section id="frontwoman" className="border-y border-white/10 bg-white/[0.02] scroll-mt-24">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-20">
           <div className="grid gap-10 lg:grid-cols-[1.18fr_0.82fr] lg:items-start lg:gap-16">
             <div className="order-2 lg:order-1">
