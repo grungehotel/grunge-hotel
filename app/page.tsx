@@ -151,6 +151,12 @@ const frontmanGallery = [
   "/images/frontman/alan-stage-05.jpg",
 ];
 
+const frontwomanGallery = [
+  "/images/frontwoman/karine-01.jpg",
+  "/images/frontwoman/karine-02.jpg",
+  "/images/frontwoman/karine-03.jpg",
+];
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [liveBandSlide, setLiveBandSlide] = useState(0);
@@ -958,6 +964,30 @@ export default function Home() {
               <a href="#contact" className="mt-8 inline-flex rounded-full bg-amber-300 px-6 py-4 text-sm font-semibold text-black transition hover:bg-amber-200">Пригласить Алана на мероприятие</a>
             </div>
             <GallerySlider images={frontmanGallery} altPrefix="Алан Салпагаров на сцене" />
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-white/[0.02]">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-20">
+          <div className="grid gap-10 lg:grid-cols-[1.18fr_0.82fr] lg:items-start lg:gap-16">
+            <div className="order-2 lg:order-1">
+              <GallerySlider images={frontwomanGallery} altPrefix="Каринэ Кеворкьян" />
+            </div>
+            <div className="order-1 lg:order-2 lg:sticky lg:top-28">
+              <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">
+                Frontwoman проекта
+              </p>
+              <h2 className="font-serif text-4xl leading-none sm:text-5xl">Каринэ Кеворкьян</h2>
+              <p className="mt-5 text-lg font-medium leading-8 text-white sm:text-xl">Вокал, который выходит на космический уровень.</p>
+              <div className="mt-7 space-y-5 text-sm leading-7 text-white/80 sm:text-base">
+                <p>Каринэ Кеворкьян — девушка, чьи вокальные данные выходят далеко за пределы нашей планеты. Мощный тембр её голоса в драйвовых рок-композициях легко сочетается с нежной и игривой подачей в лаунжевой и лирической стилистике.</p>
+                <p>Осторожно: Каринэ буквально с пары нот может сделать так, чтобы все мужчины в зале начали плакать. А после лёгкого мановения её руки — танцевали без памяти, пока не устанут.</p>
+                <p>Опыт, мощь и харизма умещаются в изящном флаконе хрупкой на вид женщины.</p>
+                <p className="font-medium text-white">Не упустите возможность пригласить этот алмаз исполнительского искусства на ваше мероприятие.</p>
+              </div>
+              <a href="#contact" className="mt-8 inline-flex rounded-full bg-amber-300 px-6 py-4 text-sm font-semibold text-black transition hover:bg-amber-200">Пригласить Каринэ на мероприятие</a>
+            </div>
           </div>
         </div>
       </section>
