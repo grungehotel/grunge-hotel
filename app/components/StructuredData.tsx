@@ -22,7 +22,7 @@ export const organizationSchema = {
   areaServed: { "@type": "City", name: "Алматы" },
   telephone: "+77072996264",
   sameAs: [
-    "https://www.instagram.com/thegrungehotel/",
+    "https://www.instagram.com/grungehotel.liveband",
     "https://www.youtube.com/@GrungeHotel_Almaty",
   ],
 };

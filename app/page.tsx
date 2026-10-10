@@ -278,12 +278,12 @@ export default function Home() {
             <a href="#live-band" className="hover:text-white">
               Живая группа
             </a>
-            <div className="group relative -mb-2 pb-4">
+            <div className="group relative py-2">
               <button type="button" className="flex items-center gap-2 transition hover:text-white">
                 Услуги
                 <span className="text-xs text-white/50">▾</span>
               </button>
-              <div className="invisible absolute left-0 top-[calc(100%-0.75rem)] w-72 translate-y-2 rounded-3xl border border-white/10 bg-black/95 p-2 opacity-0 shadow-2xl transition duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="invisible absolute left-0 top-full w-72 translate-y-2 rounded-3xl border border-white/10 bg-black/95 p-2 opacity-0 shadow-2xl transition duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                 <a href="/live-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">
                   Живая группа в Алматы
                 </a>
@@ -987,7 +987,7 @@ export default function Home() {
               <div className="flex items-center gap-3">
                 <span className="text-amber-300">◎</span>
                 <a
-                  href="https://www.instagram.com/thegrungehotel/"
+                  href="https://www.instagram.com/grungehotel.liveband"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-white"

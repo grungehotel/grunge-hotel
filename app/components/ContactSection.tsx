@@ -97,7 +97,7 @@ export default function ContactSection() {
             <div className="flex items-center gap-3">
               <span className="text-amber-300">◎</span>
               <a
-                href="https://www.instagram.com/thegrungehotel/"
+                href="https://www.instagram.com/grungehotel.liveband"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-white"
