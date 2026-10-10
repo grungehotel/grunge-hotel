@@ -49,3 +49,31 @@ html[data-theme="light"] .photo-contrast-copy [class*="text-white/"] { color: rg
 html[data-theme="light"] .photo-contrast-copy [class*="text-amber-"] { color: #fca5a5 !important; }
 html[data-theme="light"] .photo-contrast-copy .light-card { color: #18181b !important; text-shadow: none; }
 html[data-theme="light"] .photo-contrast-copy .light-card[class*="text-white/"] { color: #18181b !important; }
+
+
+/* Alan Audio: isolated work-card contrast in both themes. */
+#works .grid.gap-3 > a {
+  background: #171717;
+  border-color: rgb(255 255 255 / .14);
+  color: #fff;
+  text-decoration: none;
+}
+#works .grid.gap-3 > a:hover {
+  background: #222;
+  border-color: rgb(252 211 77 / .7);
+}
+#works .grid.gap-3 > a p:first-child { color: rgb(252 211 77 / .82); }
+#works .grid.gap-3 > a p:last-child { color: #fff; }
+#works .grid.gap-3 > a span { color: rgb(255 255 255 / .7); }
+html[data-theme=light] #works .grid.gap-3 > a {
+  background: #fff !important;
+  border-color: rgb(24 24 27 / .18) !important;
+  box-shadow: 0 1px 3px rgb(24 24 27 / .06);
+}
+html[data-theme=light] #works .grid.gap-3 > a:hover {
+  background: #fff7f7 !important;
+  border-color: rgb(185 28 28 / .65) !important;
+}
+html[data-theme=light] #works .grid.gap-3 > a p:first-child { color: #b91c1c !important; }
+html[data-theme=light] #works .grid.gap-3 > a p:last-child { color: #18181b !important; }
+html[data-theme=light] #works .grid.gap-3 > a span { color: #b91c1c !important; }
