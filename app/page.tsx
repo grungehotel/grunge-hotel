@@ -374,7 +374,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,175,55,0.22),transparent_30%)]" />
 
         <div className="relative mx-auto flex min-h-[calc(100vh-6rem)] max-w-7xl items-center px-4 py-14 sm:px-6 md:px-10 md:py-20">
-          <div className="max-w-5xl">
+          <div className="photo-contrast-copy max-w-5xl">
             <p className="mb-4 text-[10px] uppercase tracking-[0.35em] text-amber-300/80 sm:text-xs">
               Almaty · live band · music & event production
             </p>
@@ -934,7 +934,7 @@ export default function Home() {
             }}
           >
             <div className="grid gap-10 px-6 py-10 sm:px-8 md:grid-cols-[0.95fr_1.05fr] md:px-12 md:py-16">
-              <div>
+              <div className="photo-contrast-copy">
                 <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">
                   Фронтмен
                 </p>

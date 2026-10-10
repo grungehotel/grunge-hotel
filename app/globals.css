@@ -30,7 +30,10 @@ html[data-theme="light"] { --background: #fafafa; --foreground: #18181b; color-s
 .theme-toggle:hover { border-color: #dc2626; background-color: rgb(220 38 38 / .14); }
 /* Светлая тема: интерфейс бело-красный, фото и видео сохраняют контраст. */
 html[data-theme="light"] main.bg-neutral-950, html[data-theme="light"] .bg-neutral-950 { background-color: #fafafa !important; color: #18181b !important; }
+html[data-theme="light"] .bg-neutral-900 { background-color: #fff !important; color: #18181b !important; }
 html[data-theme="light"] header.bg-black\/70, html[data-theme="light"] footer.bg-black, html[data-theme="light"] .bg-black\/95 { background-color: rgb(255 255 255 / .94) !important; }
+html[data-theme="light"] .theme-toggle { border-color: rgb(24 24 27 / .28); background-color: #fff; color: #b91c1c; box-shadow: 0 1px 4px rgb(24 24 27 / .12); }
+html[data-theme="light"] .theme-toggle:hover { border-color: #b91c1c; background-color: #fef2f2; color: #7f1d1d; }
 html[data-theme="light"] .text-white { color: #18181b !important; }
 html[data-theme="light"] [class*="text-white/"] { color: rgb(24 24 27 / .72) !important; }
 html[data-theme="light"] .border-white\/10, html[data-theme="light"] .border-white\/15, html[data-theme="light"] .border-white\/20 { border-color: rgb(24 24 27 / .14) !important; }
@@ -43,5 +46,6 @@ html[data-theme="light"] .hover\:text-white:hover { color: #b91c1c !important; }
 html[data-theme="light"] img[src="/images/logo-white.png"] { filter: invert(1); }
 html[data-theme="light"] .photo-contrast-copy { color: #fff !important; text-shadow: 0 2px 16px rgb(0 0 0 / .8); }
 html[data-theme="light"] .photo-contrast-copy [class*="text-white/"] { color: rgb(255 255 255 / .9) !important; }
+html[data-theme="light"] .photo-contrast-copy [class*="text-amber-"] { color: #fca5a5 !important; }
 html[data-theme="light"] .photo-contrast-copy .light-card { color: #18181b !important; text-shadow: none; }
 html[data-theme="light"] .photo-contrast-copy .light-card[class*="text-white/"] { color: #18181b !important; }
