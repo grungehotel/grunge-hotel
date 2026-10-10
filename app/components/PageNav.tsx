@@ -59,7 +59,7 @@ export default function PageNav() {
             Живая группа
           </a>
 
-          <div className="group relative py-2">
+          <div className="group relative -mb-2 py-2 pb-4">
             <button
               type="button"
               className="flex items-center gap-2 transition hover:text-white"
@@ -68,7 +68,7 @@ export default function PageNav() {
               <span className="text-xs text-white/50">▾</span>
             </button>
 
-            <div className="invisible absolute left-0 top-full w-72 pt-1 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <div className="invisible absolute left-0 top-[calc(100%-0.75rem)] w-72 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
               <div className="rounded-3xl border border-white/10 bg-black/95 p-2 shadow-2xl">
                 {serviceLinks.map((link) => (
                   <Link
