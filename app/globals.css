@@ -77,3 +77,18 @@ html[data-theme=light] #works .grid.gap-3 > a:hover {
 html[data-theme=light] #works .grid.gap-3 > a p:first-child { color: #b91c1c !important; }
 html[data-theme=light] #works .grid.gap-3 > a p:last-child { color: #18181b !important; }
 html[data-theme=light] #works .grid.gap-3 > a span { color: #b91c1c !important; }
+
+
+/* Hero badges: readable on photo background in the light theme. */
+html[data-theme=light] .photo-contrast-copy .hero-pill {
+  background: rgb(255 255 255 / .94) !important;
+  border-color: rgb(255 255 255 / .75) !important;
+  color: #18181b !important;
+  text-shadow: none !important;
+  font-weight: 600;
+}
+html[data-theme=light] .photo-contrast-copy .hero-pill:hover {
+  background: #fff !important;
+  border-color: #b91c1c !important;
+  color: #991b1b !important;
+}

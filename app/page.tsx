@@ -415,7 +415,7 @@ export default function Home() {
               ].map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/10 bg-black/20 px-4 py-2"
+                  className="hero-pill rounded-full border border-white/10 bg-black/20 px-4 py-2"
                 >
                   {item}
                 </span>
@@ -425,31 +425,31 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-2 text-xs text-white/70 sm:text-sm">
               <a
                 href="#live-band"
-                className="rounded-full border border-white/10 bg-black/20 px-4 py-2 transition hover:border-white/30 hover:bg-white/10"
+                className="hero-pill rounded-full border border-white/10 bg-black/20 px-4 py-2 transition hover:border-white/30 hover:bg-white/10"
               >
                 Живая группа
               </a>
               <a
                 href="#tribute-shows"
-                className="rounded-full border border-white/10 bg-black/20 px-4 py-2 transition hover:border-white/30 hover:bg-white/10"
+                className="hero-pill rounded-full border border-white/10 bg-black/20 px-4 py-2 transition hover:border-white/30 hover:bg-white/10"
               >
                 Трибьют-шоу
               </a>
               <a
                 href="#technical-production"
-                className="rounded-full border border-white/10 bg-black/20 px-4 py-2 transition hover:border-white/30 hover:bg-white/10"
+                className="hero-pill rounded-full border border-white/10 bg-black/20 px-4 py-2 transition hover:border-white/30 hover:bg-white/10"
               >
                 Свет / звук / сцена
               </a>
               <a
                 href="#event-production"
-                className="rounded-full border border-white/10 bg-black/20 px-4 py-2 transition hover:border-white/30 hover:bg-white/10"
+                className="hero-pill rounded-full border border-white/10 bg-black/20 px-4 py-2 transition hover:border-white/30 hover:bg-white/10"
               >
                 Шоу под ключ
               </a>
               <a
                 href="#studio"
-                className="rounded-full border border-white/10 bg-black/20 px-4 py-2 transition hover:border-white/30 hover:bg-white/10"
+                className="hero-pill rounded-full border border-white/10 bg-black/20 px-4 py-2 transition hover:border-white/30 hover:bg-white/10"
               >
                 Студия
               </a>
