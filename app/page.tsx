@@ -155,6 +155,10 @@ const frontwomanGallery = [
   "/images/frontwoman/karine-01.jpg",
   "/images/frontwoman/karine-02.jpg",
   "/images/frontwoman/karine-03.jpg",
+  "/images/frontwoman/karine-04.jpg",
+  "/images/frontwoman/karine-05.jpg",
+  "/images/frontwoman/karine-06.jpg",
+  "/images/frontwoman/karine-07.jpg",
 ];
 
 export default function Home() {
@@ -981,9 +985,9 @@ export default function Home() {
               <h2 className="font-serif text-4xl leading-none sm:text-5xl">Каринэ Кеворкьян</h2>
               <p className="mt-5 text-lg font-medium leading-8 text-white sm:text-xl">Вокал, который выходит на космический уровень.</p>
               <div className="mt-7 space-y-5 text-sm leading-7 text-white/80 sm:text-base">
-                <p>Каринэ Кеворкьян — девушка, чьи вокальные данные выходят далеко за пределы нашей планеты. Мощный тембр её голоса в драйвовых рок-композициях легко сочетается с нежной и игривой подачей в лаунджевой и лирической стилистике.</p>
+                <p>Каринэ Кеворкьян — вокалистка, чьи профессиональные навыки выходят далеко за пределы нашей планеты. Мощный тембр её голоса в драйвовых рок-композициях легко сочетается с нежной и игривой подачей в лаунджевой и лирической стилистике.</p>
                 <p>Осторожно: Каринэ буквально с пары нот может сделать так, чтобы все мужчины в зале начали плакать. А после лёгкого мановения её руки — танцевали до беспамятства, пока не падут ниц.</p>
-                <p>Опыт, мощь и харизма умещаются в изящном флаконе хрупкой на вид женщины.</p>
+                <p>Опыт, мощь и харизма умещаются в изящном флаконе хрупкой на вид девушки.</p>
                 <p className="font-medium text-white">Не упустите возможность пригласить этот алмаз исполнительского искусства на ваше мероприятие.</p>
               </div>
               <a href="#contact" className="mt-8 inline-flex rounded-full bg-amber-300 px-6 py-4 text-sm font-semibold text-black transition hover:bg-amber-200">Пригласить Каринэ на мероприятие</a>
