@@ -24,3 +24,20 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+html[data-theme="dark"] { --background: #0a0a0a; --foreground: #ededed; color-scheme: dark; }
+html[data-theme="light"] { --background: #fafafa; --foreground: #18181b; color-scheme: light; }
+.theme-toggle { display: inline-flex; height: 2.75rem; width: 2.75rem; align-items: center; justify-content: center; border: 1px solid rgb(255 255 255 / .2); border-radius: 9999px; color: #fff; transition: background-color .2s ease, border-color .2s ease, color .2s ease; }
+.theme-toggle:hover { border-color: #dc2626; background-color: rgb(220 38 38 / .14); }
+/* Светлая тема: интерфейс бело-красный, фото и видео сохраняют контраст. */
+html[data-theme="light"] main.bg-neutral-950, html[data-theme="light"] .bg-neutral-950 { background-color: #fafafa !important; color: #18181b !important; }
+html[data-theme="light"] header.bg-black\/70, html[data-theme="light"] footer.bg-black, html[data-theme="light"] .bg-black\/95 { background-color: rgb(255 255 255 / .94) !important; }
+html[data-theme="light"] .text-white { color: #18181b !important; }
+html[data-theme="light"] [class*="text-white/"] { color: rgb(24 24 27 / .72) !important; }
+html[data-theme="light"] .border-white\/10, html[data-theme="light"] .border-white\/15, html[data-theme="light"] .border-white\/20 { border-color: rgb(24 24 27 / .14) !important; }
+html[data-theme="light"] .bg-white\/\[0\.03\], html[data-theme="light"] .bg-black\/20, html[data-theme="light"] .bg-black\/25, html[data-theme="light"] .bg-black\/30 { background-color: #fff !important; }
+html[data-theme="light"] input, html[data-theme="light"] textarea, html[data-theme="light"] select { background-color: #fff !important; color: #18181b !important; border-color: rgb(24 24 27 / .16) !important; }
+html[data-theme="light"] [class*="bg-amber-"] { background-color: #b91c1c !important; color: #fff !important; }
+html[data-theme="light"] [class*="text-amber-"] { color: #b91c1c !important; }
+html[data-theme="light"] .hover\:bg-white\/5:hover, html[data-theme="light"] .hover\:bg-white\/10:hover { background-color: rgb(185 28 28 / .08) !important; }
+html[data-theme="light"] .hover\:text-white:hover { color: #b91c1c !important; }
+html[data-theme="light"] img[src="/images/logo-white.png"] { filter: invert(1); }

@@ -9,6 +9,7 @@ declare global {
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 const serviceLinks = [
   { href: "/live-band-almaty", label: "Живая группа в Алматы" },
@@ -95,16 +96,13 @@ export default function PageNav() {
           >
             Связаться с менеджером
           </a>
+          <ThemeToggle />
         </nav>
 
-        <button
-          type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white md:hidden"
-          onClick={() => setMenuOpen((prev) => !prev)}
-          aria-label="Открыть меню"
-        >
-          <span className="text-lg">{menuOpen ? "×" : "≡"}</span>
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <button type="button" className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white" onClick={() => setMenuOpen((prev) => !prev)} aria-label="Открыть меню"><span className="text-lg">{menuOpen ? "×" : "≡"}</span></button>
+        </div>
       </div>
 
       {menuOpen && (
