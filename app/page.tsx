@@ -736,6 +736,210 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="border-y border-white/10 bg-white/[0.02]">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-20">
+          <div
+            className="relative overflow-hidden rounded-[2rem] border border-white/10"
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.78) 45%, rgba(0,0,0,0.52) 100%), url('/images/quartet main.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <div className="grid gap-10 px-6 py-10 sm:px-8 md:grid-cols-[1fr_1fr] md:px-12 md:py-16">
+              <div className="photo-contrast-copy">
+                <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">
+                  Мужской квартет
+                </p>
+                <h2 className="font-serif text-3xl leading-tight sm:text-4xl md:text-5xl">
+                  Мужской квартет для корпоративных и частных мероприятий
+                </h2>
+                <div className="mt-6 space-y-5 text-sm leading-7 text-white/80 sm:text-base">
+                  <p>
+                    Grunge Hotel работает в формате мужского квартета как отдельное
+                    решение для мероприятий, где важны качество живого выступления,
+                    дисциплина на площадке и понятный рабочий процесс.
+                  </p>
+                  <p>
+                    Этот формат подходит для корпоративов, свадеб и частных событий,
+                    когда заказчику нужна живая группа с собранной программой,
+                    сильной подачей и профессиональной организацией.
+                  </p>
+                  <p>
+                    Группа работает со своим бэклайном и соблюдает агентские условия
+                    сотрудничества: тайминг, подготовку к площадке, рабочую
+                    коммуникацию и согласованный формат взаимодействия с
+                    организатором.
+                  </p>
+                </div>
+
+                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                  {[
+                    "Мужской состав с сильной сценической подачей",
+                    "Подходит для корпоративов, свадеб и частных мероприятий",
+                    "Работа со своим бэклайном",
+                    "Соблюдение агентских условий",
+                    "Программа под задачу мероприятия",
+                    "Понятная организация работы на площадке",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="light-card rounded-2xl border border-white/10 bg-black/25 px-5 py-4 text-sm leading-7 text-white/85 backdrop-blur-[2px]"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-8">
+                  <a
+                    href="https://wa.me/77072996264"
+                    onClick={trackWhatsAppClick}
+                    className="inline-flex rounded-full bg-amber-300 px-6 py-4 text-sm font-semibold text-black transition hover:bg-amber-200"
+                  >
+                    Запросить условия
+                  </a>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/30">
+              <Image
+                src={quartetGallery[quartetSlide]}
+                alt={`Grunge Hotel quartet gallery ${quartetSlide + 1}`}
+                width={1600}
+                height={1067}
+                sizes="(max-width: 768px) 100vw, 45vw"
+                className="h-full max-h-[640px] w-full object-cover"
+              />
+            </div>
+
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={showPrevQuartetSlide}
+                  className="rounded-full border border-white/15 px-4 py-2 text-sm text-white transition hover:border-white/40 hover:bg-white/5"
+                >
+                  ← Назад
+                </button>
+                <button
+                  type="button"
+                  onClick={showNextQuartetSlide}
+                  className="rounded-full border border-white/15 px-4 py-2 text-sm text-white transition hover:border-white/40 hover:bg-white/5"
+                >
+                  Вперёд →
+                </button>
+              </div>
+
+              <p className="text-xs text-white/50 sm:text-sm">
+                {quartetSlide + 1} / {quartetGallery.length}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-4 gap-3 sm:grid-cols-6">
+              {quartetGallery.map((image, index) => (
+                <button
+                  key={image}
+                  type="button"
+                  onClick={() => setQuartetSlide(index)}
+                  className={`overflow-hidden rounded-2xl border transition ${
+                    index === quartetSlide
+                      ? "border-amber-300"
+                      : "border-white/10 hover:border-white/30"
+                  }`}
+                  aria-label={`Показать фото квартета ${index + 1}`}
+                >
+                  <Image
+                    src={image}
+                    alt={`Grunge Hotel quartet thumbnail ${index + 1}`}
+                    width={240}
+                    height={160}
+                    sizes="(max-width: 640px) 25vw, 10vw"
+                    className="h-20 w-full object-cover"
+                  />
+                </button>
+              ))}
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cases" className="border-y border-white/10 bg-neutral-950/60">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-20">
+          <div className="mb-10 max-w-3xl">
+            <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">
+              Кейсы
+            </p>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl">
+              Три сценария, в которых формат Grunge Hotel работает сильнее всего
+            </h2>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {cases.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-3xl border border-white/10 bg-neutral-900 p-6"
+              >
+                <h3 className="text-2xl font-semibold">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-white/70">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-20">
+        <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr]">
+          <div>
+            <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">
+              Репертуар
+            </p>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl">
+              500+ песен под разную аудиторию и формат вечера
+            </h2>
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-white/70 sm:text-base">
+              Рок, поп, фанк, джаз, R&B, международный и русскоязычный
+              репертуар, казахские песни, tribute-программы, танцевальные блоки
+              и более мягкие lounge-решения под нужный сценарий события.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="/repertoire.pdf"
+                className="rounded-full border border-white/20 px-7 py-4 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
+              >
+                Скачать репертуар
+              </a>
+              <a
+                href="https://wa.me/77072996264"
+                onClick={trackWhatsAppClick}
+                className="rounded-full bg-amber-300 px-7 py-4 text-center text-sm font-semibold text-black transition hover:bg-amber-200"
+              >
+                Запросить программу в WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+            <p className="mb-4 text-sm text-white/60">Нам доверяли</p>
+            <div className="flex flex-wrap gap-3">
+              {partners.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/10 px-4 py-2 text-sm text-white/80"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="frontman-section border-y border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-20">
           <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-16">
@@ -743,29 +947,15 @@ export default function Home() {
               <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">
                 Фронтмен проекта
               </p>
-              <h2 className="font-serif text-4xl leading-none sm:text-5xl">
-                Алан Салпагаров
-              </h2>
-              <p className="mt-5 text-lg font-medium leading-8 text-white sm:text-xl">
-                Шоумен и вокалист уровня звёзд первой величины.
-              </p>
+              <h2 className="font-serif text-4xl leading-none sm:text-5xl">Алан Салпагаров</h2>
+              <p className="mt-5 text-lg font-medium leading-8 text-white sm:text-xl">Шоумен и вокалист уровня звёзд первой величины.</p>
               <div className="mt-7 space-y-5 text-sm leading-7 text-white/80 sm:text-base">
-                <p>
-                  За плечами Алана — многолетний международный опыт выступлений и коллаборации с известными казахстанскими музыкальными проектами. На данный момент он негласно считается одним из лучших рок-вокалистов Алматы и Казахстана.
-                </p>
-                <p>
-                  Дворец Республики и Almaty Arena неоднократно аплодировали его перформансам в рамках оркестровых проектов.
-                </p>
-                <p>
-                  Вы могли видеть Алана в составе вокалистов Ne prosto orchestra, Tynda music и рок-мюзикла Ильяса Аутова «Три дома окнами во двор».
-                </p>
-                <p className="font-medium text-white">
-                  И у вас есть возможность увидеть талант этого человека на своём мероприятии.
-                </p>
+                <p>За плечами Алана — многолетний международный опыт выступлений и коллаборации с известными казахстанскими музыкальными проектами. На данный момент он негласно считается одним из лучших рок-вокалистов Алматы и Казахстана.</p>
+                <p>Дворец Республики и Almaty Arena неоднократно аплодировали его перформансам в рамках оркестровых проектов.</p>
+                <p>Вы могли видеть Алана в составе вокалистов Ne prosto orchestra, Tynda music и рок-мюзикла Ильяса Аутова «Три дома окнами во двор».</p>
+                <p className="font-medium text-white">И у вас есть возможность увидеть талант этого человека на своём мероприятии.</p>
               </div>
-              <a href="#contact" className="mt-8 inline-flex rounded-full bg-amber-300 px-6 py-4 text-sm font-semibold text-black transition hover:bg-amber-200">
-                Пригласить Алана на мероприятие
-              </a>
+              <a href="#contact" className="mt-8 inline-flex rounded-full bg-amber-300 px-6 py-4 text-sm font-semibold text-black transition hover:bg-amber-200">Пригласить Алана на мероприятие</a>
             </div>
             <GallerySlider images={frontmanGallery} altPrefix="Алан Салпагаров на сцене" />
           </div>
