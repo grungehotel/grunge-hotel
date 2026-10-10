@@ -730,7 +730,7 @@ export default function Home() {
             }}
           >
             <div className="grid gap-10 px-6 py-10 sm:px-8 md:grid-cols-[1fr_1fr] md:px-12 md:py-16">
-              <div>
+              <div className="photo-contrast-copy">
                 <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">
                   Мужской квартет
                 </p>
@@ -767,7 +767,7 @@ export default function Home() {
                   ].map((item) => (
                     <div
                       key={item}
-                      className="rounded-2xl border border-white/10 bg-black/25 px-5 py-4 text-sm leading-7 text-white/85 backdrop-blur-[2px]"
+                      className="light-card rounded-2xl border border-white/10 bg-black/25 px-5 py-4 text-sm leading-7 text-white/85 backdrop-blur-[2px]"
                     >
                       {item}
                     </div>

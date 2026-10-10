@@ -41,3 +41,7 @@ html[data-theme="light"] [class*="text-amber-"] { color: #b91c1c !important; }
 html[data-theme="light"] .hover\:bg-white\/5:hover, html[data-theme="light"] .hover\:bg-white\/10:hover { background-color: rgb(185 28 28 / .08) !important; }
 html[data-theme="light"] .hover\:text-white:hover { color: #b91c1c !important; }
 html[data-theme="light"] img[src="/images/logo-white.png"] { filter: invert(1); }
+html[data-theme="light"] .photo-contrast-copy { color: #fff !important; text-shadow: 0 2px 16px rgb(0 0 0 / .8); }
+html[data-theme="light"] .photo-contrast-copy [class*="text-white/"] { color: rgb(255 255 255 / .9) !important; }
+html[data-theme="light"] .photo-contrast-copy .light-card { color: #18181b !important; text-shadow: none; }
+html[data-theme="light"] .photo-contrast-copy .light-card[class*="text-white/"] { color: #18181b !important; }
