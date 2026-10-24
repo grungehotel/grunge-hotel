@@ -900,6 +900,18 @@ export default function Home() {
               </article>
             ))}
           </div>
+          <article className="mt-5 overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 p-3 sm:p-5">
+            <div className="mb-4 flex flex-col gap-2 px-2 pt-2 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">Видео-кейс</p>
+                <h3 className="mt-1 text-xl font-semibold text-white sm:text-2xl">Grunge Hotel — live в Instagram</h3>
+              </div>
+              <a href="https://www.instagram.com/p/DYkDwJMNdiC/" target="_blank" rel="noreferrer" className="text-sm font-semibold text-amber-300 transition hover:text-amber-200">Открыть в Instagram ↗</a>
+            </div>
+            <div className="overflow-hidden rounded-2xl bg-black">
+              <iframe src="https://www.instagram.com/p/DYkDwJMNdiC/embed/captioned/" title="Grunge Hotel — Instagram video case" className="min-h-[620px] w-full border-0 sm:min-h-[700px]" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" />
+            </div>
+          </article>
         </div>
       </section>
 
