@@ -285,42 +285,26 @@ export default function Home() {
           </Link>
 
           <nav className="hidden items-center gap-6 text-sm text-white/70 md:flex">
-            <a href="#live-band" className="hover:text-white">
-              Живая группа
-            </a>
             <div className="group relative py-2">
-              <button type="button" className="flex items-center gap-2 transition hover:text-white">
-                Услуги
-                <span className="text-xs text-white/50">▾</span>
-              </button>
-              <div className="invisible absolute left-0 top-full w-72 translate-y-2 rounded-3xl border border-white/10 bg-black/95 p-2 opacity-0 shadow-2xl transition duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                <a href="/live-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">
-                  Живая группа в Алматы
-                </a>
-                <a href="/corporate-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">
-                  Группа на корпоратив
-                </a>
-                <a href="/wedding-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">
-                  Группа на свадьбу
-                </a>
-                <a href="/studio-recording-almaty" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">
-                  Студия звукозаписи
-                </a>
-              </div>
+              <a href="/live-band-almaty" className="flex items-center gap-2 transition hover:text-white">Живая группа <span className="text-xs text-white/50">▾</span></a>
+              <div className="invisible absolute left-0 top-full w-72 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"><div className="rounded-3xl border border-white/10 bg-black/95 p-2 shadow-2xl">
+                <a href="/corporate-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">Группа на корпоратив</a>
+                <a href="/wedding-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">Группа на свадьбу</a>
+                <a href="#contact" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">Дуэты и инструменталисты</a>
+                <a href="/new-year-corporate-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">Новогодний корпоратив</a>
+              </div></div>
             </div>
-            <a href="#video-gallery" className="hover:text-white">
-              Кейсы
-            </a>
-            <a href="#contact" className="hover:text-white">
-              Контакты
-            </a>
-            <a
-              href="https://wa.me/77072996264"
-              onClick={trackWhatsAppClick}
-              className="rounded-full border border-white/15 px-5 py-2.5 text-white transition hover:border-white/40 hover:bg-white/5"
-            >
-              Связаться с менеджером
-            </a>
+            <div className="group relative py-2">
+              <a href="/studio-recording-almaty" className="flex items-center gap-2 transition hover:text-white">Контент-продакшн <span className="text-xs text-white/50">▾</span></a>
+              <div className="invisible absolute left-0 top-full w-80 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"><div className="rounded-3xl border border-white/10 bg-black/95 p-2 shadow-2xl">
+                <a href="/studio-recording-almaty" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">Студия звукозаписи</a>
+                <a href="/alanaudio" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">Сведение / мастеринг — Alan Audio</a>
+                <a href="#contact" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">Сессионные музыканты</a>
+              </div></div>
+            </div>
+            <a href="#contact" className="hover:text-white">Организация концертов</a>
+            <a href="#contact" className="hover:text-white">Контакты</a>
+            <a href="https://wa.me/77072996264" onClick={trackWhatsAppClick} className="rounded-full border border-white/15 px-5 py-2.5 text-white transition hover:border-white/40 hover:bg-white/5">Связаться с менеджером</a>
             <ThemeToggle />
           </nav>
 
@@ -333,54 +317,15 @@ export default function Home() {
         {menuOpen && (
           <div className="border-t border-white/10 bg-black/95 md:hidden">
             <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
-              <a
-                href="#live-band"
-                className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
-                onClick={() => setMenuOpen(false)}
-              >
-                Живая группа
-              </a>
-              <div className="mt-1 rounded-2xl border border-white/10 p-2">
-                <p className="px-2 pb-2 pt-1 text-xs uppercase tracking-[0.2em] text-white/40">
-                  Услуги
-                </p>
-                <a href="/live-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>
-                  Живая группа в Алматы
-                </a>
-                <a href="/corporate-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>
-                  Группа на корпоратив
-                </a>
-                <a href="/wedding-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>
-                  Группа на свадьбу
-                </a>
-                <a href="/studio-recording-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>
-                  Студия звукозаписи
-                </a>
+              <div className="rounded-2xl border border-white/10 p-2"><p className="px-2 pb-2 pt-1 text-xs uppercase tracking-[0.2em] text-white/40">Живая группа</p>
+                <a href="/corporate-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Группа на корпоратив</a><a href="/wedding-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Группа на свадьбу</a><a href="#contact" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Дуэты и инструменталисты</a><a href="/new-year-corporate-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Новогодний корпоратив</a>
               </div>
-              <a
-                href="#video-gallery"
-                className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
-                onClick={() => setMenuOpen(false)}
-              >
-                Кейсы
-              </a>
-              <a
-                href="#contact"
-                className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
-                onClick={() => setMenuOpen(false)}
-              >
-                Контакты
-              </a>
-              <a
-                href="https://wa.me/77072996264"
-                className="mt-2 rounded-full bg-amber-300 px-5 py-3 text-center text-sm font-semibold text-black"
-                onClick={() => {
-                  trackWhatsAppClick();
-                  setMenuOpen(false);
-                }}
-              >
-                Связаться с менеджером
-              </a>
+              <div className="rounded-2xl border border-white/10 p-2"><p className="px-2 pb-2 pt-1 text-xs uppercase tracking-[0.2em] text-white/40">Контент-продакшн</p>
+                <a href="/studio-recording-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Студия звукозаписи</a><a href="/alanaudio" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Сведение / мастеринг — Alan Audio</a><a href="#contact" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Сессионные музыканты</a>
+              </div>
+              <a href="#contact" className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Организация концертов</a>
+              <a href="#contact" className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Контакты</a>
+              <a href="https://wa.me/77072996264" className="mt-2 rounded-full bg-amber-300 px-5 py-3 text-center text-sm font-semibold text-black" onClick={() => { trackWhatsAppClick(); setMenuOpen(false); }}>Связаться с менеджером</a>
             </div>
           </div>
         )}

@@ -11,18 +11,17 @@ import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 
-const serviceLinks = [
-  { href: "/live-band-almaty", label: "Живая группа в Алматы" },
+const liveLinks = [
   { href: "/corporate-band-almaty", label: "Группа на корпоратив" },
   { href: "/wedding-band-almaty", label: "Группа на свадьбу" },
+  { href: "/#contact", label: "Дуэты и инструменталисты" },
+  { href: "/new-year-corporate-band-almaty", label: "Новогодний корпоратив" },
+];
+
+const productionLinks = [
   { href: "/studio-recording-almaty", label: "Студия звукозаписи" },
-  { href: "/alanaudio", label: "Алан Салпагаров — аудиоинженер" },
-  { href: "/cover-band-almaty", label: "Кавер-группа в Алматы" },
-  { href: "/new-year-corporate-band-almaty", label: "Группа на новогодний корпоратив" },
-  { href: "/musicians-for-corporate-almaty", label: "Музыканты на корпоратив" },
-  { href: "/mixing-mastering-almaty", label: "Сведение и мастеринг" },
-  { href: "/arrangement-almaty", label: "Аранжировка песни" },
-  { href: "/audio-engineer-almaty", label: "Аудиоинженер в Алматы" },
+  { href: "/alanaudio", label: "Сведение / мастеринг — Alan Audio" },
+  { href: "/#contact", label: "Сессионные музыканты" },
 ];
 
 export default function PageNav() {
@@ -63,48 +62,34 @@ export default function PageNav() {
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm text-white/70 md:flex">
-          <a href="/#live-band" className="hover:text-white">
-            Живая группа
-          </a>
-
+                <nav className="hidden items-center gap-6 text-sm text-white/70 md:flex">
           <div className="group relative py-2">
-            <button
-              type="button"
-              className="flex items-center gap-2 transition hover:text-white"
-            >
-              Услуги
-              <span className="text-xs text-white/50">▾</span>
-            </button>
-
+            <Link href="/live-band-almaty" className="flex items-center gap-2 transition hover:text-white">
+              Живая группа <span className="text-xs text-white/50">▾</span>
+            </Link>
             <div className="invisible absolute left-0 top-full w-72 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
               <div className="rounded-3xl border border-white/10 bg-black/95 p-2 shadow-2xl">
-                {serviceLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
+                {liveLinks.map((link) => (
+                  <Link key={link.label} href={link.href} className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">{link.label}</Link>
                 ))}
               </div>
             </div>
           </div>
-
-          <a href="/#cases" className="hover:text-white">
-            Кейсы
-          </a>
-          <a href="/#contact" className="hover:text-white">
-            Контакты
-          </a>
-          <a
-            href="https://wa.me/77072996264"
-            onClick={trackWhatsAppClick}
-            className="rounded-full border border-white/15 px-5 py-2.5 text-white transition hover:border-white/40 hover:bg-white/5"
-          >
-            Связаться с менеджером
-          </a>
+          <div className="group relative py-2">
+            <Link href="/studio-recording-almaty" className="flex items-center gap-2 transition hover:text-white">
+              Контент-продакшн <span className="text-xs text-white/50">▾</span>
+            </Link>
+            <div className="invisible absolute left-0 top-full w-80 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <div className="rounded-3xl border border-white/10 bg-black/95 p-2 shadow-2xl">
+                {productionLinks.map((link) => (
+                  <Link key={link.label} href={link.href} className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">{link.label}</Link>
+                ))}
+              </div>
+            </div>
+          </div>
+          <a href="/#contact" className="hover:text-white">Организация концертов</a>
+          <a href="/#contact" className="hover:text-white">Контакты</a>
+          <a href="https://wa.me/77072996264" onClick={trackWhatsAppClick} className="rounded-full border border-white/15 px-5 py-2.5 text-white transition hover:border-white/40 hover:bg-white/5">Связаться с менеджером</a>
           <ThemeToggle />
         </nav>
 
@@ -117,54 +102,17 @@ export default function PageNav() {
       {menuOpen && (
         <div className="border-t border-white/10 bg-black/95 md:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
-            <a
-              href="/#live-band"
-              className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
-              onClick={() => setMenuOpen(false)}
-            >
-              Живая группа
-            </a>
-
-            <div className="mt-1 rounded-2xl border border-white/10 p-2">
-              <p className="px-2 pb-2 pt-1 text-xs uppercase tracking-[0.2em] text-white/40">
-                Услуги
-              </p>
-              {serviceLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <div className="rounded-2xl border border-white/10 p-2">
+              <p className="px-2 pb-2 pt-1 text-xs uppercase tracking-[0.2em] text-white/40">Живая группа</p>
+              {liveLinks.map((link) => <Link key={link.label} href={link.href} className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>{link.label}</Link>)}
             </div>
-
-            <a
-              href="/#cases"
-              className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
-              onClick={() => setMenuOpen(false)}
-            >
-              Кейсы
-            </a>
-            <a
-              href="/#contact"
-              className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
-              onClick={() => setMenuOpen(false)}
-            >
-              Контакты
-            </a>
-            <a
-              href="https://wa.me/77072996264"
-              className="mt-2 rounded-full bg-amber-300 px-5 py-3 text-center text-sm font-semibold text-black"
-              onClick={() => {
-                trackWhatsAppClick();
-                setMenuOpen(false);
-              }}
-            >
-              Связаться с менеджером
-            </a>
+            <div className="rounded-2xl border border-white/10 p-2">
+              <p className="px-2 pb-2 pt-1 text-xs uppercase tracking-[0.2em] text-white/40">Контент-продакшн</p>
+              {productionLinks.map((link) => <Link key={link.label} href={link.href} className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>{link.label}</Link>)}
+            </div>
+            <a href="/#contact" className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Организация концертов</a>
+            <a href="/#contact" className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Контакты</a>
+            <a href="https://wa.me/77072996264" className="mt-2 rounded-full bg-amber-300 px-5 py-3 text-center text-sm font-semibold text-black" onClick={() => { trackWhatsAppClick(); setMenuOpen(false); }}>Связаться с менеджером</a>
           </div>
         </div>
       )}
