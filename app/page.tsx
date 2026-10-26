@@ -6,11 +6,12 @@ declare global {
   }
 }
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "./components/ThemeToggle";
 import GallerySlider from "./components/GallerySlider";
+import { sanityClient } from "../sanity/lib/client";
 
 const services = [
   {
@@ -161,6 +162,24 @@ const frontwomanGallery = [
   "/images/frontwoman/karine-07.jpg",
 ];
 
+type CmsHero = {
+  eyebrow?: string;
+  heroTitle?: string;
+  heroText?: string;
+  ctaLabel?: string;
+  ctaLink?: string;
+  badges?: string[];
+};
+
+const defaultHero: Required<CmsHero> = {
+  eyebrow: "Almaty · live band · music & event production",
+  heroTitle: "Живая группа и музыкальный подрядчик для мероприятий в Алматы",
+  heroText: "Grunge Hotel — это группа на корпоративы, свадьбы и частные события, с которой удобно работать организатору. Сильный вокал, широкий репертуар, адаптация под аудиторию и результат без лишнего хаоса.",
+  ctaLabel: "Связаться с менеджером",
+  ctaLink: "https://wa.me/77072996264",
+  badges: ["Event-агентства", "Корпоративные клиенты", "Свадьбы", "500+ песен", "3 сета по 30–40 минут"],
+};
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [liveBandSlide, setLiveBandSlide] = useState(0);
@@ -176,6 +195,17 @@ export default function Home() {
     type: "idle" | "success" | "error" | "loading";
     message: string;
   }>({ type: "idle", message: "" });
+
+  const [hero, setHero] = useState<Required<CmsHero>>(defaultHero);
+
+  useEffect(() => {
+    sanityClient
+      .fetch<CmsHero | null>(
+        '*[_type == "homepage"][0]{eyebrow, heroTitle, heroText, ctaLabel, ctaLink, badges}'
+      )
+      .then((content) => content && setHero({ ...defaultHero, ...content, badges: content.badges?.length ? content.badges : defaultHero.badges }))
+      .catch(() => undefined);
+  }, []);
 
   const trackWhatsAppClick = () => {
     if (typeof window !== "undefined" && window.ym) {
@@ -349,17 +379,15 @@ export default function Home() {
         <div className="relative mx-auto flex min-h-[calc(100vh-6rem)] max-w-7xl items-center px-4 py-14 sm:px-6 md:px-10 md:py-20">
           <div className="photo-contrast-copy max-w-5xl">
             <p className="mb-4 text-[10px] uppercase tracking-[0.35em] text-amber-300/80 sm:text-xs">
-              Almaty · live band · music & event production
+              {hero.eyebrow}
             </p>
 
             <h1 className="max-w-5xl font-serif text-4xl leading-[0.94] sm:text-5xl md:text-7xl xl:text-8xl">
-              Живая группа и музыкальный подрядчик для мероприятий в Алматы
+              {hero.heroTitle}
             </h1>
 
             <p className="mt-5 max-w-3xl text-sm leading-7 text-white/75 sm:text-base md:text-lg">
-              Grunge Hotel — это группа на корпоративы, свадьбы и частные события,
-              с которой удобно работать организатору. Сильный вокал, широкий
-              репертуар, адаптация под аудиторию и результат без лишнего хаоса.
+              {hero.heroText}
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -379,13 +407,7 @@ export default function Home() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3 text-xs text-white/70 sm:text-sm">
-              {[
-                "Event-агентства",
-                "Корпоративные клиенты",
-                "Свадьбы",
-                "500+ песен",
-                "3 сета по 30–40 минут",
-              ].map((item) => (
+              {hero.badges.map((item) => (
                 <span
                   key={item}
                   className="hero-pill rounded-full border border-white/10 bg-black/20 px-4 py-2"
