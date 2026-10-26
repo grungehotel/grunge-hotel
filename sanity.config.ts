@@ -3,6 +3,7 @@ import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./sanity/schemaTypes";
 import { structure } from "./sanity/structure";
+import { seedTool } from "./sanity/seedTool";
 
 const projectId = "qlmlva8n";
 const dataset = "production";
@@ -13,6 +14,6 @@ export default defineConfig({
   projectId,
   dataset,
   basePath: "/admingod",
-  plugins: [structureTool({ structure }), visionTool()],
+  plugins: [structureTool({ structure }), visionTool(), seedTool()],
   schema: { types: schemaTypes },
 });
