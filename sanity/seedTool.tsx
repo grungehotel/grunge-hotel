@@ -8,7 +8,39 @@ const documents = [
   { _id: "siteSettings", _type: "siteSettings", title: "Grunge Hotel", instagram: "https://www.instagram.com/grungehotel.liveband", email: "grungehotels@gmail.com", phone: "+77072996264", whatsapp: "77072996264" },
   { _id: "homepage", _type: "homepage", eyebrow: "Almaty · live band · music & event production", heroTitle: "Живая группа и музыкальный подрядчик для мероприятий в Алматы", heroText: "Grunge Hotel — это группа на корпоративы, свадьбы и частные события, с которой удобно работать организатору. Сильный вокал, широкий репертуар, адаптация под аудиторию и результат без лишнего хаоса.", ctaLabel: "Связаться с менеджером", ctaLink: "https://wa.me/77072996264", badges: ["Event-агентства", "Корпоративные клиенты", "Свадьбы", "500+ песен", "3 сета по 30–40 минут"] },
   { _id: "service-live-band", _type: "service", title: "Живая группа", slug: { current: "live-band-almaty" }, group: "Живая группа", description: "Главный формат Grunge Hotel для корпоративов, свадеб и частных событий: сильный вокал, широкий репертуар, адаптация под аудиторию и понятная работа с организатором." },
-  { _id: "service-corporate", _type: "service", title: "Группа на корпоратив", slug: { current: "corporate-band-almaty" }, group: "Живая группа", description: "Отдельная посадочная под B2B и корпоративный сегмент: работа с компаниями, event-агентствами и брендовыми мероприятиями." },
+  {
+    _id: "service-corporate", _type: "service", title: "Группа на корпоратив", slug: { current: "corporate-band-almaty" }, group: "Живая группа",
+    eyebrow: "corporate band · almaty · b2b events",
+    heroTitle: "Группа на корпоратив в Алматы для компаний, которым нужен уверенный live-результат",
+    description: "Grunge Hotel работает на корпоративных мероприятиях как музыкальный подрядчик: живой состав, адаптация под публику, координация с организатором и понятный рабочий процесс.",
+    heroAlt: "Corporate live performance by Grunge Hotel",
+    ctaPrimary: "Связаться с менеджером", ctaSecondary: "Оставить заявку",
+    intro: [
+      "Корпоратив — это не просто концертный выход. Здесь важны темп вечера, аудитория, внутренняя культура компании и то, насколько группа умеет встроиться в программу без лишнего шума.",
+      "Мы работаем именно как подрядчик под корпоративную задачу: заранее согласовываем формат, музыкальные пики, длительность сетов и взаимодействие с организатором или event-агентством.",
+    ],
+    bullets: [
+      "Работа с event-агентствами и прямыми корпоративными заказчиками",
+      "Музыкальная программа под бренд, публику и тайминг",
+      "Сильный вокал и живой драйв без перегруза",
+      "Понятная коммуникация до и во время мероприятия",
+      "Форматы для welcome, main block и afterparty",
+      "Опыт корпоративных мероприятий для крупных компаний",
+    ],
+    audience: ["B2B клиенты", "HR и marketing teams", "Event-агентства", "Закрытые корпоративы"],
+    scenarios: [
+      { title: "Новогодний корпоратив", text: "Когда нужно дать вечернему блоку максимум энергии и собрать танцпол без затяжного раскачивания." },
+      { title: "Бренд-мероприятие", text: "Когда музыкальная часть должна выглядеть дорого, собранно и поддерживать общий статус события." },
+      { title: "Клиентский вечер", text: "Когда живая группа должна усиливать впечатление от бренда, а не перетягивать внимание не в ту сторону." },
+    ],
+    faq: [
+      { q: "Вы умеете работать под строгий тайминг?", a: "Да. Для корпоративов это базовое требование. Мы заранее обсуждаем тайминг, блоки и точки входа в программу." },
+      { q: "Можно ли согласовать репертуар под компанию и гостей?", a: "Да. При необходимости собираем отдельные акценты: более танцевально, более статусно, мягче на welcome или плотнее на основной блок." },
+      { q: "Вы работаете с документами?", a: "Да, организационные вопросы и формат сотрудничества обсуждаются на этапе брифа и подготовки заявки." },
+    ],
+    seoTitle: "Группа на корпоратив в Алматы — Grunge Hotel",
+    seoDescription: "Группа на корпоратив в Алматы: живое выступление для компаний, брендов и закрытых событий. Grunge Hotel — сильная программа, понятная коммуникация и работа под тайминг вечера.",
+  },
   { _id: "service-wedding", _type: "service", title: "Группа на свадьбу", slug: { current: "wedding-band-almaty" }, group: "Живая группа", description: "Живая программа для свадебного вечера: сильные музыкальные блоки, танцпол и работа под гостей и тайминг мероприятия." },
   { _id: "service-duets", _type: "service", title: "Дуэты и инструменталисты", slug: { current: "duets-instrumentalists-almaty" }, group: "Живая группа", description: "Музыкальное сопровождение камерных форматов, церемоний и специальных блоков мероприятия." },
   { _id: "service-new-year", _type: "service", title: "Новогодний корпоратив", slug: { current: "new-year-corporate-band-almaty" }, group: "Живая группа", description: "Концертная программа для новогоднего корпоратива: живой звук, танцпол и работа по таймингу вечера." },
@@ -36,6 +68,29 @@ const documents = [
   { _id: "case-instagram-live", _type: "caseStudy", title: "Grunge Hotel — live в Instagram", description: "Видео-кейс Grunge Hotel.", mediaUrl: "https://www.instagram.com/p/DYkDwJMNdiC/", featured: true, order: 4 },
 ];
 
+const corporateDocument = documents.find((document) => document._id === "service-corporate");
+const { _id: corporateId, _type: corporateType, ...corporateFields } = corporateDocument as any;
+
+function CorporateContentTool() {
+  const client = useClient({ apiVersion: "2025-02-19" });
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
+
+  const loadCorporatePage = async () => {
+    setLoading(true);
+    try {
+      await client.patch(corporateId).set(corporateFields).commit();
+      setStatus("Текущая информация страницы «Группа на корпоратив» загружена. Откройте её слева в разделе «Живая группа».");
+    } catch {
+      setStatus("Не удалось загрузить страницу. Попробуйте ещё раз.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return <Card><Stack><Text>Группа на корпоратив</Text><Text>Загрузит текущие текстовые блоки, FAQ и SEO страницы корпоративов. Используйте один раз: действие заменит только этот документ.</Text><Button text={loading ? "Загружаем…" : "Загрузить страницу корпоративов"} tone="primary" onClick={loadCorporatePage} disabled={loading} />{status && <Text>{status}</Text>}</Stack></Card>;
+}
+
 function SeedTool() {
   const client = useClient({ apiVersion: "2025-02-19" });
   const [loading, setLoading] = useState(false);
@@ -44,8 +99,8 @@ function SeedTool() {
   const seed = async () => {
     setLoading(true);
     try {
-      await documents.reduce((transaction, document) => transaction.createOrReplace(document as any), client.transaction()).commit();
-      setStatus("Текущие тексты сайта загружены. Откройте разделы слева.");
+      await Promise.all(documents.map((document) => client.createIfNotExists(document as any)));
+      setStatus("Структура создана. Существующие правки не были перезаписаны.");
     } catch {
       setStatus("Не удалось загрузить содержимое. Попробуйте ещё раз.");
     } finally {
@@ -58,5 +113,5 @@ function SeedTool() {
 
 export const seedTool = definePlugin({
   name: "seed-tool",
-  tools: (prev) => [...prev, { name: "seed-content", title: "Загрузить контент", component: SeedTool }],
+  tools: (prev) => [...prev, { name: "seed-content", title: "Загрузить контент", component: SeedTool }, { name: "load-corporate-content", title: "Страница корпоративов", component: CorporateContentTool }],
 });
