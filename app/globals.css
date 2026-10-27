@@ -188,21 +188,9 @@ html[data-theme="light"] .site-logo-medallion {
 .instagram-case-frame {
   position: absolute;
   top: -4.75rem;
-  left: 21.875%;
-  width: 56.25%;
+  left: 0;
+  width: 100%;
   height: calc(100% + 9.5rem);
   border: 0;
   background: #000;
 }
-
-
-/* Маска скрывает служебный нижний блок Instagram: реакции, комментарии и метрики. */
-.instagram-case-mask {
-  height: 44%;
-  background: linear-gradient(to bottom, transparent 0%, rgb(0 0 0 / .9) 28%, #000 58%);
-}
-
-
-.instagram-case-frame { z-index: 0; }
-.instagram-case-mask { z-index: 20; }
-.instagram-case-link { z-index: 30; }
