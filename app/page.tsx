@@ -295,7 +295,7 @@ export default function Home() {
                 alt=""
                 fill
                 sizes="48px"
-                className="object-contain p-1.5"
+                className="object-contain scale-[1.24] p-0.5"
                 priority
               />
             </span>
