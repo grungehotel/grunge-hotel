@@ -26,6 +26,7 @@ type ServiceLandingPageProps = {
   pricingItems?: { label: string; price: string; note?: string }[];
   cmsId?: string;
   instagramCases?: { title: string; href: string }[];
+  youtubeCases?: { title: string; href: string; videoId: string }[];
 };
 
 type CmsService = Partial<Omit<ServiceLandingPageProps, "pathname" | "heroImage" | "cmsId">> & {
@@ -90,6 +91,7 @@ export default async function ServiceLandingPage({
   pricingItems,
   cmsId,
   instagramCases,
+  youtubeCases,
 }: ServiceLandingPageProps) {
   const cms = await getCmsService(cmsId);
   eyebrow = cms?.eyebrow || eyebrow;
@@ -319,6 +321,40 @@ export default async function ServiceLandingPage({
                       <h3 className="mt-1 text-base font-semibold text-white">{item.title}</h3>
                     </div>
                     <a href={item.href} target="_blank" rel="noreferrer" aria-label={`Открыть ${item.title} в Instagram`} className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 text-lg text-white transition hover:border-amber-200 hover:text-amber-200">↗</a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {youtubeCases?.length ? (
+        <section id="cases" className="border-y border-white/10 bg-white/[0.02]">
+          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-20">
+            <div className="mb-10 max-w-3xl">
+              <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">Свадебные кейсы</p>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl">Как Grunge Hotel звучит на реальных свадьбах</h2>
+            </div>
+            <div className="grid gap-5 md:grid-cols-3">
+              {youtubeCases.map((item, index) => (
+                <article key={item.videoId} className="overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 shadow-[0_18px_45px_rgba(0,0,0,0.22)]">
+                  <div className="relative aspect-[9/16] overflow-hidden bg-black">
+                    <iframe
+                      className="absolute inset-0 h-full w-full border-0"
+                      src={`https://www.youtube-nocookie.com/embed/${item.videoId}?rel=0&modestbranding=1&playsinline=1`}
+                      title={item.title}
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                  <div className="flex items-center justify-between gap-3 p-4">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.2em] text-amber-300/80">Кейс {String(index + 1).padStart(2, "0")}</p>
+                      <h3 className="mt-1 text-base font-semibold text-white">{item.title}</h3>
+                    </div>
+                    <a href={item.href} target="_blank" rel="noreferrer" aria-label={`Открыть ${item.title} на YouTube`} className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 text-lg text-white transition hover:border-amber-200 hover:text-amber-200">↗</a>
                   </div>
                 </article>
               ))}
