@@ -165,8 +165,8 @@ html[data-theme="light"] .photo-contrast-copy .hero-pill {
 .site-logo-medallion {
   position: relative;
   display: inline-block;
-  height: 3rem;
-  width: 3rem;
+  height: 3.75rem;
+  width: 3.75rem;
   flex: 0 0 auto;
   overflow: hidden;
   border: 1px solid rgb(255 255 255 / .45);
@@ -177,4 +177,8 @@ html[data-theme="light"] .photo-contrast-copy .hero-pill {
 html[data-theme="light"] .site-logo-medallion {
   border-color: rgb(24 24 27 / .18);
   box-shadow: 0 2px 8px rgb(24 24 27 / .14);
+}
+
+@media (min-width: 768px) {
+  .site-logo-medallion { height: 4.25rem; width: 4.25rem; }
 }
