@@ -187,10 +187,10 @@ html[data-theme="light"] .site-logo-medallion {
 /* Instagram-кейсы: внутри карточки показывается только визуальный фрагмент ролика. */
 .instagram-case-frame {
   position: absolute;
-  left: 0;
-  top: -3.25rem;
-  width: 100%;
-  height: calc(100% + 7.25rem);
+  top: -4.75rem;
+  left: 21.875%;
+  width: 56.25%;
+  height: calc(100% + 9.5rem);
   border: 0;
   background: #000;
 }
