@@ -135,3 +135,19 @@ html[data-theme="light"] header [class~="bg-black/95"] a:hover,
 html[data-theme="light"] header [class~="bg-black/70"] a:hover {
   color: #991b1b !important;
 }
+
+
+/* Плашки на hero — светлая поверхность, поэтому текст в них всегда тёмный. */
+html[data-theme="light"] .photo-contrast-copy .hero-pill,
+html[data-theme="light"] .photo-contrast-copy .hero-pill[class*="text-white/"] {
+  color: #18181b !important;
+  background: rgb(255 255 255 / .96) !important;
+  border-color: rgb(255 255 255 / .82) !important;
+  text-shadow: none !important;
+  font-weight: 600;
+}
+html[data-theme="light"] .photo-contrast-copy .hero-pill:hover {
+  color: #991b1b !important;
+  background: #fff !important;
+  border-color: #b91c1c !important;
+}
