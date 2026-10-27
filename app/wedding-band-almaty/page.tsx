@@ -12,6 +12,7 @@ export default function WeddingBandAlmatyPage() {
   return (
     <ServiceLandingPage
       pathname="/wedding-band-almaty"
+      cmsId="service-wedding"
       eyebrow="wedding band · almaty · live music"
       title="Группа на свадьбу в Алматы, которая держит зал и не ломает темп вечера"
       description="Grunge Hotel — живая группа для свадеб в Алматы: музыкальные блоки под настроение гостей, понятная работа с организатором и живой сет, который действительно работает на танцпол."

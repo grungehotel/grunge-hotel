@@ -56,6 +56,12 @@ export const schemaTypes = [
       defineField({ name: "q", title: "Вопрос", type: "string" }),
       defineField({ name: "a", title: "Ответ", type: "text", rows: 3 }),
     ] }] }),
+    defineField({ name: "pricingTitle", title: "Заголовок прайса", type: "string" }),
+    defineField({ name: "pricingItems", title: "Позиции прайса", type: "array", of: [{ type: "object", fields: [
+      defineField({ name: "label", title: "Услуга", type: "string" }),
+      defineField({ name: "price", title: "Стоимость", type: "string" }),
+      defineField({ name: "note", title: "Пояснение", type: "text", rows: 2 }),
+    ] }] }),
     defineField({ name: "body", title: "Дополнительный текст страницы", type: "array", of: [{ type: "block" }] }),
     defineField({ name: "seoTitle", title: "SEO title", type: "string", validation: (Rule) => Rule.max(60) }),
     defineField({ name: "seoDescription", title: "SEO description", type: "text", rows: 3, validation: (Rule) => Rule.max(160) }),

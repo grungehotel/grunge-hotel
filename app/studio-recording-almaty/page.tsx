@@ -12,6 +12,7 @@ export default function StudioRecordingAlmatyPage() {
   return (
     <ServiceLandingPage
       pathname="/studio-recording-almaty"
+      cmsId="service-studio"
       eyebrow="studio recording · almaty"
       title="Студия звукозаписи в Алматы для вокала, барабанов и записи группы целиком"
       description="Студийное направление Grunge Hotel: запись вокала, барабанов, группы целиком и поканальная сессия. Подходит артистам, группам и проектам, которым нужен понятный рабочий процесс и прозрачная стоимость."

@@ -48,6 +48,11 @@ const documents = [
   { _id: "service-alan-audio", _type: "service", title: "Сведение / мастеринг — Alan Audio", slug: { current: "alanaudio" }, group: "Контент-продакшн", description: "Сведение, мастеринг, запись вокала, аранжировка и музыкальное производство с Аланом Салпагаровым." },
   { _id: "service-session", _type: "service", title: "Сессионные музыканты", slug: { current: "session-musicians-almaty" }, group: "Контент-продакшн", description: "Музыканты для студийных записей, концертных программ и авторских проектов." },
   { _id: "service-concerts", _type: "service", title: "Организация концертов", slug: { current: "concert-organization-almaty" }, group: "Другое", description: "Организация музыкальной части события: программа, артисты, координация и производство." },
+  { _id: "service-cover-band", _type: "service", title: "Кавер-группа в Алматы", slug: { current: "cover-band-almaty" }, group: "Живая группа", eyebrow: "cover band · almaty · live music", heroTitle: "Кавер-группа в Алматы для событий, которым нужен живой характер", description: "Grunge Hotel — кавер-группа для корпоративов, свадеб и частных мероприятий в Алматы. Собираем программу под гостей, тайминг и задачу вечера.", heroAlt: "Grunge Hotel — кавер-группа в Алматы" },
+  { _id: "service-arrangement", _type: "service", title: "Аранжировка песни", slug: { current: "arrangement-almaty" }, group: "Контент-продакшн", eyebrow: "arrangement · production · almaty", heroTitle: "Аранжировка песни в Алматы: убрать лишнее, оставить характер", description: "Алан Салпагаров помогает собрать аранжировку от идеи и демо до цельного трека: форма, инструментальные партии и фактура.", heroAlt: "Алан Салпагаров в студии" },
+  { _id: "service-audio-engineer", _type: "service", title: "Аудиоинженер в Алматы", slug: { current: "audio-engineer-almaty" }, group: "Контент-продакшн", eyebrow: "audio engineer · almaty · production", heroTitle: "Аудиоинженер в Алматы для записи, продакшна и релиза", description: "Алан Салпагаров — аудиоинженер и композитор. Помогает провести трек от идеи и записи до сведения, мастеринга и релизной версии.", heroAlt: "Алан Салпагаров — аудиоинженер" },
+  { _id: "service-mixing-mastering", _type: "service", title: "Сведение и мастеринг", slug: { current: "mixing-mastering-almaty" }, group: "Контент-продакшн", eyebrow: "mixing · mastering · almaty", heroTitle: "Сведение и мастеринг в Алматы: трек, который держит внимание", description: "Алан Салпагаров работает со сведением и мастерингом: от подготовки проекта до финального релизного мастера.", heroAlt: "Алан Салпагаров — аудиоинженер в Алматы" },
+  { _id: "service-musicians-corporate", _type: "service", title: "Музыканты на корпоратив", slug: { current: "musicians-for-corporate-almaty" }, group: "Живая группа", eyebrow: "musicians for corporate · almaty", heroTitle: "Музыканты на корпоратив в Алматы без случайного музыкального фона", description: "Grunge Hotel — живой состав для корпоративных событий: от музыкального блока до полноценной программы, собранной под гостей и сценарий.", heroAlt: "Музыканты Grunge Hotel на корпоративе" },
   { _id: "artist-alan", _type: "artist", name: "Алан Салпагаров", role: "Фронтмен проекта", anchor: "frontman", order: 1, ctaLabel: "Пригласить Алана на мероприятие", ctaLink: "#contact", body: [
     block("Шоумен и вокалист уровня звёзд первой величины.", "alan1"),
     block("За плечами Алана — многолетний международный опыт выступлений и коллаборации с известными казахстанскими музыкальными проектами. На данный момент он негласно считается одним из лучших рок-вокалистов Алматы и Казахстана.", "alan2"),
@@ -68,29 +73,6 @@ const documents = [
   { _id: "case-instagram-live", _type: "caseStudy", title: "Grunge Hotel — live в Instagram", description: "Видео-кейс Grunge Hotel.", mediaUrl: "https://www.instagram.com/p/DYkDwJMNdiC/", featured: true, order: 4 },
 ];
 
-const corporateDocument = documents.find((document) => document._id === "service-corporate");
-const { _id: corporateId, _type: corporateType, ...corporateFields } = corporateDocument as any;
-
-function CorporateContentTool() {
-  const client = useClient({ apiVersion: "2025-02-19" });
-  const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState("");
-
-  const loadCorporatePage = async () => {
-    setLoading(true);
-    try {
-      await client.patch(corporateId).set(corporateFields).commit();
-      setStatus("Текущая информация страницы «Группа на корпоратив» загружена. Откройте её слева в разделе «Живая группа».");
-    } catch {
-      setStatus("Не удалось загрузить страницу. Попробуйте ещё раз.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return <Card><Stack><Text>Группа на корпоратив</Text><Text>Загрузит текущие текстовые блоки, FAQ и SEO страницы корпоративов. Используйте один раз: действие заменит только этот документ.</Text><Button text={loading ? "Загружаем…" : "Загрузить страницу корпоративов"} tone="primary" onClick={loadCorporatePage} disabled={loading} />{status && <Text>{status}</Text>}</Stack></Card>;
-}
-
 function SeedTool() {
   const client = useClient({ apiVersion: "2025-02-19" });
   const [loading, setLoading] = useState(false);
@@ -99,8 +81,12 @@ function SeedTool() {
   const seed = async () => {
     setLoading(true);
     try {
-      await Promise.all(documents.map((document) => client.createIfNotExists(document as any)));
-      setStatus("Структура создана. Существующие правки не были перезаписаны.");
+      await Promise.all(documents.map(async (document) => {
+        await client.createIfNotExists(document as any);
+        const { _id, _type, ...fields } = document as any;
+        await client.patch(_id).setIfMissing(fields).commit();
+      }));
+      setStatus("Весь текущий контент сайта загружен. Уже внесённые ручные правки сохранены.");
     } catch {
       setStatus("Не удалось загрузить содержимое. Попробуйте ещё раз.");
     } finally {
@@ -108,10 +94,10 @@ function SeedTool() {
     }
   };
 
-  return <Card><Stack><Text>Загрузить текущие тексты сайта</Text><Text>Обновит главную, услуги, артистов, контакты и кейсы данными с сайта. Используйте один раз перед началом ручного редактирования.</Text><Button text={loading ? "Загружаем…" : "Загрузить текущий контент"} tone="primary" onClick={seed} disabled={loading} />{status && <Text>{status}</Text>}</Stack></Card>;
+  return <Card><Stack><Text>Загрузить весь текущий контент сайта</Text><Text>Создаст и дополнит документы всех текущих страниц: главной, услуг, артистов, кейсов, контактов и ссылок. Уже опубликованные ручные правки не перезаписываются.</Text><Button text={loading ? "Загружаем…" : "Загрузить текущий контент"} tone="primary" onClick={seed} disabled={loading} />{status && <Text>{status}</Text>}</Stack></Card>;
 }
 
 export const seedTool = definePlugin({
   name: "seed-tool",
-  tools: (prev) => [...prev, { name: "seed-content", title: "Загрузить контент", component: SeedTool }, { name: "load-corporate-content", title: "Страница корпоративов", component: CorporateContentTool }],
+  tools: (prev) => [...prev, { name: "seed-content", title: "Загрузить контент", component: SeedTool }],
 });

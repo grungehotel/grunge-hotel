@@ -10,6 +10,7 @@ export const metadata = buildMetadata({
 export default function AudioEngineerAlmatyPage() {
   return <ServiceLandingPage
     pathname="/audio-engineer-almaty"
+      cmsId="service-audio-engineer"
     eyebrow="audio engineer · almaty · production"
     title="Аудиоинженер в Алматы для записи, продакшна и релиза"
     description="Алан Салпагаров — аудиоинженер и композитор. Помогает провести трек от идеи и записи до сведения, мастеринга и релизной версии."

@@ -10,6 +10,7 @@ export const metadata = buildMetadata({
 export default function MixingMasteringAlmatyPage() {
   return <ServiceLandingPage
     pathname="/mixing-mastering-almaty"
+      cmsId="service-mixing-mastering"
     eyebrow="mixing · mastering · almaty"
     title="Сведение и мастеринг в Алматы: трек, который держит внимание"
     description="Алан Салпагаров работает со сведением и мастерингом: от подготовки проекта до финального релизного мастера."

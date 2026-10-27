@@ -10,6 +10,7 @@ export const metadata = buildMetadata({
 export default function ArrangementAlmatyPage() {
   return <ServiceLandingPage
     pathname="/arrangement-almaty"
+      cmsId="service-arrangement"
     eyebrow="arrangement · production · almaty"
     title="Аранжировка песни в Алматы: убрать лишнее, оставить характер"
     description="Алан Салпагаров помогает собрать аранжировку от идеи и демо до цельного трека: форма, инструментальные партии и фактура."

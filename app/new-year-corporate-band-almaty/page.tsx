@@ -10,6 +10,7 @@ export const metadata = buildMetadata({
 export default function NewYearCorporateBandAlmatyPage() {
   return <ServiceLandingPage
     pathname="/new-year-corporate-band-almaty"
+      cmsId="service-new-year"
     eyebrow="new year corporate · almaty · live band"
     title="Группа на новогодний корпоратив в Алматы"
     description="Grunge Hotel готовит живой музыкальный блок для новогодних корпоративов: под сценарий вечера, гостей и работу event-команды."

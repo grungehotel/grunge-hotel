@@ -4,6 +4,7 @@ import PageNav from "./PageNav";
 import ContactSection from "./ContactSection";
 import PageFooter from "./PageFooter";
 import StructuredData, { siteUrl } from "./StructuredData";
+import { sanityClient, urlFor } from "../../sanity/lib/client";
 
 type Bullet = string;
 
@@ -23,7 +24,26 @@ type ServiceLandingPageProps = {
   faq?: { q: string; a: string }[];
   pricingTitle?: string;
   pricingItems?: { label: string; price: string; note?: string }[];
+  cmsId?: string;
 };
+
+type CmsService = Partial<Omit<ServiceLandingPageProps, "pathname" | "heroImage" | "cmsId">> & {
+  heroTitle?: string;
+  image?: { asset?: unknown; alt?: string };
+};
+
+async function getCmsService(cmsId?: string): Promise<CmsService | null> {
+  if (!cmsId) return null;
+  try {
+    return await sanityClient.fetch<CmsService | null>(
+      '*[_type == "service" && _id == $id][0]{eyebrow, heroTitle, description, image, heroAlt, ctaPrimary, ctaSecondary, intro, bullets, audience, scenarios, faq, pricingTitle, pricingItems}',
+      { id: cmsId },
+      { next: { revalidate: 60 } }
+    );
+  } catch {
+    return null;
+  }
+}
 
 export function buildMetadata({
   title,
@@ -51,7 +71,7 @@ export function buildMetadata({
   };
 }
 
-export default function ServiceLandingPage({
+export default async function ServiceLandingPage({
   eyebrow,
   title,
   description,
@@ -67,7 +87,23 @@ export default function ServiceLandingPage({
   faq,
   pricingTitle,
   pricingItems,
+  cmsId,
 }: ServiceLandingPageProps) {
+  const cms = await getCmsService(cmsId);
+  eyebrow = cms?.eyebrow || eyebrow;
+  title = cms?.heroTitle || title;
+  description = cms?.description || description;
+  heroImage = cms?.image?.asset ? urlFor(cms.image).width(2200).quality(85).url() : heroImage;
+  heroAlt = cms?.image?.alt || cms?.heroAlt || heroAlt;
+  ctaPrimary = cms?.ctaPrimary || ctaPrimary;
+  ctaSecondary = cms?.ctaSecondary || ctaSecondary;
+  intro = cms?.intro?.length ? cms.intro : intro;
+  bullets = cms?.bullets?.length ? cms.bullets : bullets;
+  audience = cms?.audience?.length ? cms.audience : audience;
+  scenarios = cms?.scenarios?.length ? cms.scenarios : scenarios;
+  faq = cms?.faq?.length ? cms.faq : faq;
+  pricingTitle = cms?.pricingTitle || pricingTitle;
+  pricingItems = cms?.pricingItems?.length ? cms.pricingItems : pricingItems;
   const hasPricing = Boolean(pricingItems?.length);
   const hasFaq = Boolean(faq?.length);
   const pageUrl = `${siteUrl}${pathname}`;

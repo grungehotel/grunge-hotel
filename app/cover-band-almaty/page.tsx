@@ -10,6 +10,7 @@ export const metadata = buildMetadata({
 export default function CoverBandAlmatyPage() {
   return <ServiceLandingPage
     pathname="/cover-band-almaty"
+      cmsId="service-cover-band"
     eyebrow="cover band · almaty · live music"
     title="Кавер-группа в Алматы для событий, которым нужен живой характер"
     description="Grunge Hotel — кавер-группа для корпоративов, свадеб и частных мероприятий в Алматы. Собираем программу под гостей, тайминг и задачу вечера."

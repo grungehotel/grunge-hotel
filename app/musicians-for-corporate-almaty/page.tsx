@@ -10,6 +10,7 @@ export const metadata = buildMetadata({
 export default function MusiciansForCorporateAlmatyPage() {
   return <ServiceLandingPage
     pathname="/musicians-for-corporate-almaty"
+      cmsId="service-musicians-corporate"
     eyebrow="musicians for corporate · almaty"
     title="Музыканты на корпоратив в Алматы без случайного музыкального фона"
     description="Grunge Hotel — живой состав для корпоративных событий: от музыкального блока до полноценной программы, собранной под гостей и сценарий."
