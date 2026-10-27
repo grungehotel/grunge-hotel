@@ -37,23 +37,16 @@ export default function PageNav() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-10">
         <Link href="/" className="flex items-center gap-3">
-          <Image
-            src="/images/logo-white.png"
-            alt="Grunge Hotel logo"
-            width={40}
-            height={40}
-            className="site-logo-dark h-10 w-10 object-contain"
-            priority
-/>
-<Image
-            src="/images/logo-light.png"
-            alt=""
-            aria-hidden="true"
-            width={40}
-            height={40}
-            className="site-logo-light h-10 w-10 object-contain"
-            priority
-/>
+          <span className="site-logo-medallion" aria-hidden="true">
+            <Image
+              src="/images/logo-main.png"
+              alt=""
+              fill
+              sizes="48px"
+              className="object-contain p-1.5"
+              priority
+            />
+          </span>
           <div>
             <p className="font-serif text-lg leading-none">Grunge Hotel</p>
             <p className="text-[10px] uppercase tracking-[0.28em] text-white/50 sm:text-xs">

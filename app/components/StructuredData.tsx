@@ -16,7 +16,7 @@ export const organizationSchema = {
   "@type": ["MusicGroup", "Organization"],
   name: "Grunge Hotel",
   url: siteUrl,
-  logo: `${siteUrl}/images/logo-white.png`,
+  logo: `${siteUrl}/images/logo-main.png`,
   description:
     "Живая группа и музыкальный подрядчик для корпоративов, свадеб и частных мероприятий в Алматы.",
   areaServed: { "@type": "City", name: "Алматы" },

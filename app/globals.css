@@ -159,3 +159,22 @@ html[data-theme="light"] .photo-contrast-copy .hero-pill {
   -webkit-text-fill-color: #111827 !important;
   text-shadow: none !important;
 }
+
+
+/* Основной знак в шапке: круглый медальон с логотипом. */
+.site-logo-medallion {
+  position: relative;
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / .45);
+  border-radius: 9999px;
+  background: #fff;
+  box-shadow: 0 3px 12px rgb(0 0 0 / .25);
+}
+html[data-theme="light"] .site-logo-medallion {
+  border-color: rgb(24 24 27 / .18);
+  box-shadow: 0 2px 8px rgb(24 24 27 / .14);
+}
