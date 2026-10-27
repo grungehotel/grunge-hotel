@@ -201,3 +201,8 @@ html[data-theme="light"] .site-logo-medallion {
   height: 44%;
   background: linear-gradient(to bottom, transparent 0%, rgb(0 0 0 / .9) 28%, #000 58%);
 }
+
+
+.instagram-case-frame { z-index: 0; }
+.instagram-case-mask { z-index: 20; }
+.instagram-case-link { z-index: 30; }
