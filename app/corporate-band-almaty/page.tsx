@@ -35,6 +35,16 @@ const fallback = {
     { q: "Можно ли согласовать репертуар под компанию и гостей?", a: "Да. При необходимости собираем отдельные акценты: более танцевально, более статусно, мягче на welcome или плотнее на основной блок." },
     { q: "Вы работаете с документами?", a: "Да, организационные вопросы и формат сотрудничества обсуждаются на этапе брифа и подготовки заявки." },
   ],
+  instagramCases: [
+    { title: "Sadea", href: "https://www.instagram.com/p/DYkDwJMNdiC/" },
+    { title: "Nurbank · Бахчисарай", href: "https://www.instagram.com/p/DYxCzENJHG1/" },
+    { title: "Bereke · Atakent", href: "https://www.instagram.com/p/DXLoiOUgm6L/" },
+    { title: "Tinkoff", href: "https://www.instagram.com/p/DWnld7PiefV/" },
+    { title: "KazAinv", href: "https://www.instagram.com/p/DTcptHxjakN/?img_index=1" },
+    { title: "Total Energies", href: "https://www.instagram.com/p/DKADF7uti2j/" },
+    { title: "Arma House · Atyrau", href: "https://www.instagram.com/p/DIaoPslI8BJ/" },
+    { title: "VTB · New Year", href: "https://www.instagram.com/p/DD_hr23iqgc/" },
+  ],
   seoTitle: "Группа на корпоратив в Алматы — Grunge Hotel",
   seoDescription: "Группа на корпоратив в Алматы: живое выступление для компаний, брендов и закрытых событий. Grunge Hotel — сильная программа, понятная коммуникация и работа под тайминг вечера.",
 };
