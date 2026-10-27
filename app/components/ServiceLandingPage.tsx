@@ -189,7 +189,7 @@ export default async function ServiceLandingPage({
               {audience.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/10 bg-black/20 px-4 py-2"
+                  className="hero-pill rounded-full border border-white/10 bg-black/20 px-4 py-2"
                 >
                   {item}
                 </span>
