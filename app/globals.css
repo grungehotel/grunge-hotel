@@ -94,3 +94,44 @@ html[data-theme=light] .photo-contrast-copy .hero-pill:hover {
   border-color: #b91c1c !important;
   color: #991b1b !important;
 }
+
+
+/* Светлая тема: контраст зависит от поверхности, а не от цвета класса. */
+html[data-theme="light"] .photo-contrast-copy,
+html[data-theme="light"] .photo-contrast-copy h1,
+html[data-theme="light"] .photo-contrast-copy h2,
+html[data-theme="light"] .photo-contrast-copy h3 {
+  color: #fff !important;
+  text-shadow: 0 2px 18px rgb(0 0 0 / .9);
+}
+html[data-theme="light"] .photo-contrast-copy [class*="text-white/"] {
+  color: rgb(255 255 255 / .94) !important;
+  text-shadow: 0 2px 14px rgb(0 0 0 / .82);
+}
+html[data-theme="light"] .photo-contrast-copy a[class*="border-white"] {
+  color: #fff !important;
+  border-color: rgb(255 255 255 / .58) !important;
+  background: rgb(0 0 0 / .26) !important;
+  text-shadow: 0 2px 12px rgb(0 0 0 / .85);
+}
+html[data-theme="light"] .photo-contrast-copy a[class*="border-white"]:hover {
+  background: rgb(0 0 0 / .46) !important;
+  border-color: #fff !important;
+}
+/* Навигация и выпадающие списки всегда остаются светлой поверхностью в светлой теме. */
+html[data-theme="light"] [class~="bg-black/95"],
+html[data-theme="light"] [class~="bg-black/70"] {
+  background-color: rgb(255 255 255 / .97) !important;
+  color: #18181b !important;
+}
+html[data-theme="light"] header [class~="bg-black/95"] a,
+html[data-theme="light"] header [class~="bg-black/70"] a,
+html[data-theme="light"] header [class~="bg-black/95"] p,
+html[data-theme="light"] header [class~="bg-black/70"] p {
+  color: #18181b !important;
+  text-shadow: none !important;
+}
+html[data-theme="light"] header [class~="bg-black/95"] a:hover,
+html[data-theme="light"] header [class~="bg-black/70"] a:hover {
+  color: #991b1b !important;
+}

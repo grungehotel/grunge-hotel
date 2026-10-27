@@ -159,7 +159,7 @@ export default async function ServiceLandingPage({
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,175,55,0.22),transparent_30%)]" />
 
         <div className="relative mx-auto flex min-h-[calc(86vh-6rem)] max-w-7xl items-center px-4 py-14 sm:px-6 md:px-10 md:py-20">
-          <div className="max-w-4xl">
+          <div className="photo-contrast-copy max-w-4xl">
             <p className="mb-4 text-[10px] uppercase tracking-[0.35em] text-amber-300/80 sm:text-xs">
               {eyebrow}
             </p>
