@@ -304,13 +304,15 @@ export default async function ServiceLandingPage({
                 <article key={item.href} className="overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 shadow-[0_18px_45px_rgba(0,0,0,0.22)]">
                   <div className="relative aspect-[4/5] overflow-hidden bg-black">
                     <iframe
-                      className="instagram-case-frame"
+                      className="instagram-case-frame pointer-events-none"
+                      tabIndex={-1}
                       src={item.href.split("?")[0].replace(/\/?$/, "/") + "embed/"}
                       title={item.title}
                       loading="lazy"
                       allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                     />
                     <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/75 to-transparent" />
+                    <a href={item.href} target="_blank" rel="noreferrer" aria-label={`Открыть ${item.title} в Instagram`} className="absolute inset-0 z-10" />
                   </div>
                   <div className="flex items-center justify-between gap-3 p-4">
                     <div>
