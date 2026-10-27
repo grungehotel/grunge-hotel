@@ -194,3 +194,10 @@ html[data-theme="light"] .site-logo-medallion {
   border: 0;
   background: #000;
 }
+
+
+/* Маска скрывает служебный нижний блок Instagram: реакции, комментарии и метрики. */
+.instagram-case-mask {
+  height: 44%;
+  background: linear-gradient(to bottom, transparent 0%, rgb(0 0 0 / .9) 28%, #000 58%);
+}

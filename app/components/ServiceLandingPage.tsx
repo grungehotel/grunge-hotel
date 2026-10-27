@@ -311,7 +311,7 @@ export default async function ServiceLandingPage({
                       loading="lazy"
                       allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                     />
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/75 to-transparent" />
+                    <div className="instagram-case-mask pointer-events-none absolute inset-x-0 bottom-0" />
                     <a href={item.href} target="_blank" rel="noreferrer" aria-label={`Открыть ${item.title} в Instagram`} className="absolute inset-0 z-10" />
                   </div>
                   <div className="flex items-center justify-between gap-3 p-4">
