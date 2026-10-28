@@ -26,6 +26,8 @@ type ServiceLandingPageProps = {
   pricingItems?: { label: string; price: string; note?: string }[];
   cmsId?: string;
   instagramCases?: { title: string; href: string }[];
+  instagramCasesTitle?: string;
+  instagramCasesDescription?: string;
   youtubeCases?: { title: string; href: string; videoId: string }[];
 };
 
@@ -91,6 +93,8 @@ export default async function ServiceLandingPage({
   pricingItems,
   cmsId,
   instagramCases,
+  instagramCasesTitle,
+  instagramCasesDescription,
   youtubeCases,
 }: ServiceLandingPageProps) {
   const cms = await getCmsService(cmsId);
@@ -297,9 +301,9 @@ export default async function ServiceLandingPage({
         <section id="cases" className="border-y border-white/10 bg-white/[0.02]">
           <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-20">
             <div className="mb-10 max-w-3xl">
-              <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">Корпоративные кейсы</p>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl">Живые выступления — без постановочных декораций</h2>
-              <p className="mt-4 text-sm leading-7 text-white/70 sm:text-base">Фрагменты реальных корпоративов Grunge Hotel. Открывайте любой кейс в Instagram, если хотите посмотреть ролик целиком.</p>
+              <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">{instagramCasesTitle || "Корпоративные кейсы"}</p>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl">{instagramCasesTitle ? "Реальные выступления Grunge Hotel" : "Живые выступления — без постановочных декораций"}</h2>
+              <p className="mt-4 text-sm leading-7 text-white/70 sm:text-base">{instagramCasesDescription || "Фрагменты реальных корпоративов Grunge Hotel. Открывайте любой кейс в Instagram, если хотите посмотреть ролик целиком."}</p>
             </div>
             <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
               {instagramCases.map((item, index) => (
