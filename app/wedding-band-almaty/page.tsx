@@ -13,15 +13,10 @@ export default function WeddingBandAlmatyPage() {
     <ServiceLandingPage
       pathname="/wedding-band-almaty"
       cmsId="service-wedding"
-      instagramCasesTitle="Кейсы Grunge Hotel"
-      instagramCasesDescription="Реальные корпоративные, онлайн- и студийные форматы с участием Grunge Hotel. Открывайте кейс, чтобы посмотреть оригинал в Instagram."
-      instagramCases={[
-        { title: "Samsung", href: "https://www.instagram.com/reel/CmQsB-Mr357/" },
-        { title: "Samsung · event case", href: "https://www.instagram.com/p/CmQmwgQtk3p/?img_index=4" },
-        { title: "VTB · New Year", href: "https://www.instagram.com/p/DD_hr23iqgc/" },
-        { title: "Nurbank · Бахчисарай", href: "https://www.instagram.com/p/DYxCzENJHG1/" },
-        { title: "Bereke · Atakent", href: "https://www.instagram.com/p/DXLoiOUgm6L/" },
-        { title: "Unilever · online format", href: "https://www.instagram.com/reel/CYy57gaFgMx/" },
+      youtubeCases={[
+        { title: "Свадебный live-set", href: "https://youtube.com/shorts/XfGtNN7f5Ew?si=M13B_-KBhcud6K7R", videoId: "XfGtNN7f5Ew" },
+        { title: "Свадебный танцпол", href: "https://youtube.com/shorts/JLgPTdgNOP8?si=ijLDTp5aP2mUiZ9z", videoId: "JLgPTdgNOP8" },
+        { title: "Живая музыка на свадьбе", href: "https://youtube.com/shorts/UlKLiiAw7no?si=8VetAuT5vmu4rvYp", videoId: "UlKLiiAw7no" },
       ]}
       eyebrow="wedding band · almaty · live music"
       title="Группа на свадьбу в Алматы, которая держит зал и не ломает темп вечера"

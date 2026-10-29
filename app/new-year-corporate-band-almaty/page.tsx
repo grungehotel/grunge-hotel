@@ -10,7 +10,17 @@ export const metadata = buildMetadata({
 export default function NewYearCorporateBandAlmatyPage() {
   return <ServiceLandingPage
     pathname="/new-year-corporate-band-almaty"
-      cmsId="service-new-year"
+    cmsId="service-new-year"
+    instagramCasesTitle="Новогодние кейсы Grunge Hotel"
+    instagramCasesDescription="Реальные корпоративные, онлайн- и студийные форматы с участием Grunge Hotel. Открывайте кейс, чтобы посмотреть оригинал в Instagram."
+    instagramCases={[
+      { title: "Samsung", href: "https://www.instagram.com/reel/CmQsB-Mr357/" },
+      { title: "Samsung · event case", href: "https://www.instagram.com/p/CmQmwgQtk3p/?img_index=4" },
+      { title: "VTB · New Year", href: "https://www.instagram.com/p/DD_hr23iqgc/" },
+      { title: "Nurbank · Бахчисарай", href: "https://www.instagram.com/p/DYxCzENJHG1/" },
+      { title: "Bereke · Atakent", href: "https://www.instagram.com/p/DXLoiOUgm6L/" },
+      { title: "Unilever · online format", href: "https://www.instagram.com/reel/CYy57gaFgMx/" },
+    ]}
     eyebrow="new year corporate · almaty · live band"
     title="Группа на новогодний корпоратив в Алматы"
     description="Grunge Hotel готовит живой музыкальный блок для новогодних корпоративов: под сценарий вечера, гостей и работу event-команды."
