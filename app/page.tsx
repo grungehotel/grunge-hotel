@@ -318,7 +318,7 @@ export default function Home() {
               </div></div>
             </div>
             <div className="group relative py-2">
-              <a href="/studio-recording-almaty" className="flex items-center gap-2 transition hover:text-white">Контент-продакшн <span className="text-xs text-white/50">▾</span></a>
+              <a href="/studio-recording-almaty" className="flex items-center gap-2 transition hover:text-white">Продакшн услуги <span className="text-xs text-white/50">▾</span></a>
               <div className="invisible absolute left-0 top-full w-80 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"><div className="rounded-3xl border border-white/10 bg-black/95 p-2 shadow-2xl">
                 <a href="/studio-recording-almaty" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">Студия звукозаписи</a>
                 <a href="/alanaudio" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">Сведение / мастеринг — Alan Audio</a>
@@ -343,7 +343,7 @@ export default function Home() {
               <div className="rounded-2xl border border-white/10 p-2"><p className="px-2 pb-2 pt-1 text-xs uppercase tracking-[0.2em] text-white/40">Живая группа</p>
                 <a href="/corporate-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Группа на корпоратив</a><a href="/wedding-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Группа на свадьбу</a><a href="#contact" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Дуэты и инструменталисты</a><a href="/new-year-corporate-band-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Новогодний корпоратив</a>
               </div>
-              <div className="rounded-2xl border border-white/10 p-2"><p className="px-2 pb-2 pt-1 text-xs uppercase tracking-[0.2em] text-white/40">Контент-продакшн</p>
+              <div className="rounded-2xl border border-white/10 p-2"><p className="px-2 pb-2 pt-1 text-xs uppercase tracking-[0.2em] text-white/40">Продакшн услуги</p>
                 <a href="/studio-recording-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Студия звукозаписи</a><a href="/alanaudio" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Сведение / мастеринг — Alan Audio</a><a href="#contact" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Сессионные музыканты</a>
               </div>
               <a href="#contact" className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Организация концертов</a>

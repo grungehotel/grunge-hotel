@@ -70,7 +70,7 @@ export default function PageNav() {
           </div>
           <div className="group relative py-2">
             <Link href="/studio-recording-almaty" className="flex items-center gap-2 transition hover:text-white">
-              Контент-продакшн <span className="text-xs text-white/50">▾</span>
+              Продакшн услуги <span className="text-xs text-white/50">▾</span>
             </Link>
             <div className="invisible absolute left-0 top-full w-80 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
               <div className="rounded-3xl border border-white/10 bg-black/95 p-2 shadow-2xl">
@@ -100,7 +100,7 @@ export default function PageNav() {
               {liveLinks.map((link) => <Link key={link.label} href={link.href} className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>{link.label}</Link>)}
             </div>
             <div className="rounded-2xl border border-white/10 p-2">
-              <p className="px-2 pb-2 pt-1 text-xs uppercase tracking-[0.2em] text-white/40">Контент-продакшн</p>
+              <p className="px-2 pb-2 pt-1 text-xs uppercase tracking-[0.2em] text-white/40">Продакшн услуги</p>
               {productionLinks.map((link) => <Link key={link.label} href={link.href} className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>{link.label}</Link>)}
             </div>
             <a href="/#contact" className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Организация концертов</a>
