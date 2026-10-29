@@ -37,7 +37,7 @@ export const schemaTypes = [
   defineType({ name: "service", title: "Услуга / посадочная страница", type: "document", fields: [
     defineField({ name: "title", title: "Название", type: "string", validation: (Rule) => Rule.required() }),
     defineField({ name: "slug", title: "URL", type: "slug", options: { source: "title", maxLength: 96 }, validation: (Rule) => Rule.required() }),
-    defineField({ name: "group", title: "Группа в меню", type: "string", options: { list: ["Живая группа", "Контент-продакшн", "Другое"] } }),
+    defineField({ name: "group", title: "Группа в меню", type: "string", options: { list: ["Живая группа", "Продакшн услуги", "Другое"] } }),
     defineField({ name: "eyebrow", title: "Надзаголовок hero", type: "string" }),
     defineField({ name: "heroTitle", title: "Заголовок hero", type: "string" }),
     defineField({ name: "description", title: "Краткое описание", type: "text", rows: 3 }),

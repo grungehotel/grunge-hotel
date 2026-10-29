@@ -17,11 +17,11 @@ export const structure: StructureResolver = (S) =>
             .filter('_type == "service" && group == "Живая группа"')
         ),
       S.listItem()
-        .title("Контент-продакшн")
+        .title("Продакшн услуги")
         .child(
           S.documentTypeList("service")
-            .title("Контент-продакшн")
-            .filter('_type == "service" && group == "Контент-продакшн"')
+            .title("Продакшн услуги")
+            .filter('_type == "service" && group in ["Продакшн услуги", "Контент-продакшн"]')
         ),
       S.listItem()
         .title("Организация концертов")

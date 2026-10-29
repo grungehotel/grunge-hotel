@@ -9,6 +9,7 @@ import { sanityClient, urlFor } from "../../sanity/lib/client";
 type Bullet = string;
 
 type ServiceLandingPageProps = {
+  galleryImages?: { src: string; alt: string }[];
   eyebrow: string;
   title: string;
   description: string;
@@ -96,6 +97,7 @@ export default async function ServiceLandingPage({
   instagramCasesTitle,
   instagramCasesDescription,
   youtubeCases,
+  galleryImages,
 }: ServiceLandingPageProps) {
   const cms = await getCmsService(cmsId);
   eyebrow = cms?.eyebrow || eyebrow;
@@ -296,6 +298,20 @@ export default async function ServiceLandingPage({
           </div>
         </div>
       </section>
+
+      {galleryImages?.length ? (
+        <section className="border-y border-white/10 bg-white/[0.02]">
+          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-20">
+            <div className="grid gap-5 md:grid-cols-2">
+              {galleryImages.map((image) => (
+                <div key={image.src} className="relative aspect-[2/3] overflow-hidden rounded-3xl border border-white/10 bg-neutral-900">
+                  <Image src={image.src} alt={image.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {instagramCases?.length ? (
         <section id="cases" className="border-y border-white/10 bg-white/[0.02]">

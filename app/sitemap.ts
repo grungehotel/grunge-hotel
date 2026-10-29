@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/corporate-band-almaty", lastModified: "2026-10-09", priority: 0.9 },
     { path: "/wedding-band-almaty", lastModified: "2026-10-09", priority: 0.9 },
     { path: "/studio-recording-almaty", lastModified: "2026-10-09", priority: 0.9 },
+    { path: "/vocal-coaching-almaty", lastModified: "2026-10-29", priority: 0.8 },
     { path: "/alanaudio", lastModified: "2026-10-09", priority: 0.9 },
     { path: "/cover-band-almaty", lastModified: "2026-10-09", priority: 0.8 },
     { path: "/new-year-corporate-band-almaty", lastModified: "2026-10-09", priority: 0.8 },

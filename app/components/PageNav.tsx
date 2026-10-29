@@ -22,6 +22,7 @@ const productionLinks = [
   { href: "/studio-recording-almaty", label: "Студия звукозаписи" },
   { href: "/alanaudio", label: "Сведение / мастеринг — Alan Audio" },
   { href: "/#contact", label: "Сессионные музыканты" },
+  { href: "/vocal-coaching-almaty", label: "Вокальный коучинг" },
 ];
 
 export default function PageNav() {
