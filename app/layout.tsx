@@ -29,6 +29,11 @@ export const metadata: Metadata = {
     images: [{ url: "/images/hero.jpg", width: 1200, height: 630, alt: "Grunge Hotel" }],
   },
   twitter: { card: "summary_large_image" },
+  icons: {
+    icon: [{ url: "/favicon-star.svg", type: "image/svg+xml" }],
+    shortcut: ["/favicon-star.svg"],
+    apple: [{ url: "/favicon-star.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({
