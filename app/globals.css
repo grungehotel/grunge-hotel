@@ -269,3 +269,17 @@ html[data-theme="light"] .scenario-card {
 }
 html[data-theme="light"] .scenario-card-title { color: #18181b !important; }
 html[data-theme="light"] .scenario-card-copy { color: #4b5563 !important; }
+
+/* Красная плашка «страхи клиента»: белый текст в любой теме. */
+.client-fears-banner {
+  background-color: #bd1d1d !important;
+  border-color: rgb(254 202 202 / .68) !important;
+  color: #fff !important;
+}
+.client-fears-banner p,
+html[data-theme="light"] .client-fears-banner p,
+html[data-theme="light"] .client-fears-banner [class*="text-white/"] {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-shadow: none !important;
+}

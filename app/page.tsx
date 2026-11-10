@@ -514,7 +514,7 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="mt-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 p-6">
+            <div className="client-fears-banner mt-8 rounded-3xl border border-amber-300/20 bg-amber-300/5 p-6">
               <p className="text-sm leading-7 text-white/80 sm:text-base">
                 Главные страхи клиента мы понимаем заранее: группа может оказаться
                 слишком роковой, скучной или неудобной в работе. Поэтому мы
@@ -839,25 +839,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="cases" className="border-y border-white/10 bg-neutral-950/60">
+      <section id="cases" className="scenario-section border-y border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-20">
-          <div className="mb-10 max-w-3xl">
-            <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">
+          <div className="scenario-heading mb-10 max-w-3xl">
+            <p className="scenario-eyebrow mb-3 text-[10px] uppercase tracking-[0.3em] sm:text-xs">
               Кейсы
             </p>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl">
+            <h2 className="scenario-title font-serif text-3xl sm:text-4xl md:text-5xl">
               Три сценария, в которых формат Grunge Hotel работает сильнее всего
             </h2>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="scenario-grid grid gap-5 md:grid-cols-3">
             {cases.map((item) => (
               <article
                 key={item.title}
-                className="rounded-3xl border border-white/10 bg-neutral-900 p-6"
+                className="scenario-card rounded-3xl p-6"
               >
-                <h3 className="text-2xl font-semibold">{item.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-white/70">{item.text}</p>
+                <h3 className="scenario-card-title text-2xl font-semibold">{item.title}</h3>
+                <p className="scenario-card-copy mt-4 text-sm leading-7">{item.text}</p>
               </article>
             ))}
           </div>
