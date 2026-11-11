@@ -72,8 +72,8 @@ export default function VocalCoachingAlmatyPage() {
       instagramCasesTitle="Видео · Instagram"
       instagramCasesDescription="Фрагмент работы Яны Малоземовой — вокального коуча для мероприятий."
       instagramCases={[
-        { title: "Яна Малоземова — vocal coaching", href: "https://www.instagram.com/reel/DbYWB2Ex3EO/?vrfl=cWJjeHQwd2k5d2xw" },
-        { title: "Яна Малоземова — vocal coaching", href: "https://www.instagram.com/p/DV_db_ICCMr/" },
+        { title: "Lounge Music Vocals", href: "https://www.instagram.com/reel/DbYWB2Ex3EO/?vrfl=cWJjeHQwd2k5d2xw" },
+        { title: "Советы по постановке голоса", href: "https://www.instagram.com/p/DV_db_ICCMr/" },
       ]}
       youtubeCasesTitle="Видео · YouTube"
       youtubeCasesHeading="Вокальный коучинг — видео"
