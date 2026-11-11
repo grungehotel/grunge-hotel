@@ -30,6 +30,8 @@ type ServiceLandingPageProps = {
   instagramCasesTitle?: string;
   instagramCasesDescription?: string;
   youtubeCases?: { title: string; href: string; videoId: string }[];
+  youtubeCasesTitle?: string;
+  youtubeCasesHeading?: string;
 };
 
 type CmsService = Partial<Omit<ServiceLandingPageProps, "pathname" | "heroImage" | "cmsId">> & {
@@ -97,6 +99,8 @@ export default async function ServiceLandingPage({
   instagramCasesTitle,
   instagramCasesDescription,
   youtubeCases,
+  youtubeCasesTitle,
+  youtubeCasesHeading,
   galleryImages,
 }: ServiceLandingPageProps) {
   const cms = await getCmsService(cmsId);
@@ -353,8 +357,8 @@ export default async function ServiceLandingPage({
         <section id="cases" className="border-y border-white/10 bg-white/[0.02]">
           <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:px-10 md:py-20">
             <div className="mb-10 max-w-3xl">
-              <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">Свадебные кейсы</p>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl">Как Grunge Hotel звучит на реальных свадьбах</h2>
+              <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-amber-300/80 sm:text-xs">{youtubeCasesTitle || "Свадебные кейсы"}</p>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl">{youtubeCasesHeading || "Как Grunge Hotel звучит на реальных свадьбах"}</h2>
             </div>
             <div className="grid gap-5 md:grid-cols-3">
               {youtubeCases.map((item, index) => (

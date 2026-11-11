@@ -69,10 +69,16 @@ export default function VocalCoachingAlmatyPage() {
         { src: "/images/vocal-coaching/yana-malozemova-hero.jpg", alt: "Яна Малоземова — вокальный коуч" },
         { src: "/images/vocal-coaching/yana-malozemova-stage.jpg", alt: "Яна Малоземова на сцене" },
       ]}
-      instagramCasesTitle="Видео"
+      instagramCasesTitle="Видео · Instagram"
       instagramCasesDescription="Фрагмент работы Яны Малоземовой — вокального коуча для мероприятий."
       instagramCases={[
         { title: "Яна Малоземова — vocal coaching", href: "https://www.instagram.com/reel/DbYWB2Ex3EO/?vrfl=cWJjeHQwd2k5d2xw" },
+        { title: "Яна Малоземова — vocal coaching", href: "https://www.instagram.com/p/DV_db_ICCMr/" },
+      ]}
+      youtubeCasesTitle="Видео · YouTube"
+      youtubeCasesHeading="Вокальный коучинг — видео"
+      youtubeCases={[
+        { title: "Яна Малоземова — vocal coaching", href: "https://www.youtube.com/watch?v=5Wwhej5LFJI", videoId: "5Wwhej5LFJI" },
       ]}
     />
   );
