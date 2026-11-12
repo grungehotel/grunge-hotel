@@ -83,7 +83,7 @@ export default function PageNav() {
           </div>
           <a href="/#contact" className="hover:text-white">Организация концертов</a>
           <a href="/#contact" className="hover:text-white">Контакты</a>
-          <a href="https://wa.me/77072996264" onClick={trackWhatsAppClick} className="rounded-full border border-white/15 px-5 py-2.5 text-white transition hover:border-white/40 hover:bg-white/5">Связаться с менеджером</a>
+          <a href="https://wa.me/77072996264" onClick={trackWhatsAppClick} className="manager-nav-cta rounded-full px-5 py-2.5 text-white transition">Связаться с менеджером</a>
           <ThemeToggle />
         </nav>
 
@@ -106,7 +106,7 @@ export default function PageNav() {
             </div>
             <a href="/#contact" className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Организация концертов</a>
             <a href="/#contact" className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Контакты</a>
-            <a href="https://wa.me/77072996264" className="mt-2 rounded-full bg-amber-300 px-5 py-3 text-center text-sm font-semibold text-black" onClick={() => { trackWhatsAppClick(); setMenuOpen(false); }}>Связаться с менеджером</a>
+            <a href="https://wa.me/77072996264" className="manager-nav-cta mt-2 rounded-full px-5 py-3 text-center text-sm font-semibold text-white" onClick={() => { trackWhatsAppClick(); setMenuOpen(false); }}>Связаться с менеджером</a>
           </div>
         </div>
       )}
