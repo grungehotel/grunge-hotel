@@ -193,7 +193,7 @@ export default async function ServiceLandingPage({
               </a>
               <a
                 href="#contact"
-                className="rounded-full border border-white/20 px-6 py-4 text-center text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
+                className="hero-secondary-cta rounded-full border border-white/20 px-6 py-4 text-center text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5"
               >
                 {ctaSecondary}
               </a>

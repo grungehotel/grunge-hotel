@@ -251,6 +251,45 @@ html[data-theme="light"] .photo-contrast-copy a.hero-pill:hover {
   -webkit-text-fill-color: #991b1b !important;
 }
 
+/* Фото-hero — всегда тёмная поверхность: текст и контурные CTA не наследуют цвета светлой темы. */
+.photo-contrast-copy > h1,
+.photo-contrast-copy > h2,
+.photo-contrast-copy > h3,
+.photo-contrast-copy > p {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-shadow: 0 2px 18px rgb(0 0 0 / .88) !important;
+}
+.photo-contrast-copy .hero-secondary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  border-color: rgb(255 255 255 / .62) !important;
+  background: rgb(0 0 0 / .28) !important;
+  text-shadow: 0 2px 12px rgb(0 0 0 / .88) !important;
+}
+.photo-contrast-copy .hero-secondary-cta:hover {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  border-color: #fff !important;
+  background: rgb(0 0 0 / .48) !important;
+}
+.photo-contrast-copy .hero-pill,
+.photo-contrast-copy a.hero-pill,
+html[data-theme="light"] .photo-contrast-copy .hero-pill,
+html[data-theme="light"] .photo-contrast-copy a.hero-pill {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  text-shadow: none !important;
+}
+.photo-contrast-copy .hero-pill:hover,
+.photo-contrast-copy a.hero-pill:hover {
+  color: #991b1b !important;
+  -webkit-text-fill-color: #991b1b !important;
+}
+
 /* Сценарии на посадочных: отдельный выразительный, но читаемый блок. */
 .scenario-section {
   background:
@@ -302,6 +341,12 @@ html[data-theme="light"] .scenario-card-copy { color: #4b5563 !important; }
 .client-fears-banner p,
 html[data-theme="light"] .client-fears-banner p,
 html[data-theme="light"] .client-fears-banner [class*="text-white/"] {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-shadow: none !important;
+}
+.client-fears-banner,
+.client-fears-banner * {
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
   text-shadow: none !important;
