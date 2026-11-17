@@ -351,3 +351,35 @@ html[data-theme="light"] .client-fears-banner [class*="text-white/"] {
   -webkit-text-fill-color: #fff !important;
   text-shadow: none !important;
 }
+
+/* Основной CTA: одинаково читаемый на фото, в светлой и тёмной темах. */
+.hero-primary-cta,
+html[data-theme="light"] .hero-primary-cta,
+html[data-theme="dark"] .hero-primary-cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #c81e1e !important;
+  border: 1px solid #e34b43 !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  box-shadow: 0 8px 20px rgb(0 0 0 / .22);
+  text-shadow: none !important;
+}
+.hero-primary-cta:hover,
+html[data-theme="light"] .hero-primary-cta:hover,
+html[data-theme="dark"] .hero-primary-cta:hover {
+  background: #a91616 !important;
+  border-color: #f87171 !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+/* Дублируем правило после глобальных theme overrides: текст CTA не может стать тёмным. */
+html[data-theme="light"] .manager-nav-cta.text-white,
+html[data-theme="dark"] .manager-nav-cta.text-white {
+  background: #c81e1e !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-align: center !important;
+}

@@ -326,7 +326,7 @@ export default function Home() {
                 <a href="/vocal-coaching-almaty" className="block rounded-2xl px-4 py-3 text-white/80 transition hover:bg-white/5 hover:text-white">Вокальный коучинг</a>
               </div></div>
             </div>
-            <a href="#contact" className="hover:text-white">Организация концертов</a>
+            <a href="/concert-organization-almaty" className="hover:text-white">Организация концертов</a>
             <a href="#contact" className="hover:text-white">Контакты</a>
             <a href="https://wa.me/77072996264" onClick={trackWhatsAppClick} className="manager-nav-cta rounded-full px-5 py-2.5 text-white transition">Связаться с менеджером</a>
             <ThemeToggle />
@@ -347,7 +347,7 @@ export default function Home() {
               <div className="rounded-2xl border border-white/10 p-2"><p className="px-2 pb-2 pt-1 text-xs uppercase tracking-[0.2em] text-white/40">Продакшн услуги</p>
                 <a href="/studio-recording-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Студия звукозаписи</a><a href="/alanaudio" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Сведение / мастеринг — Alan Audio</a><a href="#contact" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Сессионные музыканты</a><a href="/vocal-coaching-almaty" className="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Вокальный коучинг</a>
               </div>
-              <a href="#contact" className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Организация концертов</a>
+              <a href="/concert-organization-almaty" className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Организация концертов</a>
               <a href="#contact" className="rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white" onClick={() => setMenuOpen(false)}>Контакты</a>
               <a href="https://wa.me/77072996264" className="manager-nav-cta mt-2 rounded-full px-5 py-3 text-center text-sm font-semibold text-white" onClick={() => { trackWhatsAppClick(); setMenuOpen(false); }}>Связаться с менеджером</a>
             </div>
@@ -388,7 +388,7 @@ export default function Home() {
               <a
                 href="https://wa.me/77072996264"
                 onClick={trackWhatsAppClick}
-                className="rounded-full bg-amber-300 px-6 py-4 text-center text-sm font-semibold text-black transition hover:bg-amber-200"
+                className="hero-primary-cta rounded-full px-6 py-4 text-center text-sm font-semibold transition"
               >
                 Связаться с менеджером
               </a>
@@ -527,7 +527,7 @@ export default function Home() {
               <a
                 href="https://wa.me/77072996264"
                 onClick={trackWhatsAppClick}
-                className="rounded-full bg-amber-300 px-6 py-4 text-center text-sm font-semibold text-black transition hover:bg-amber-200"
+                className="hero-primary-cta rounded-full px-6 py-4 text-center text-sm font-semibold transition"
               >
                 Связаться с менеджером
               </a>

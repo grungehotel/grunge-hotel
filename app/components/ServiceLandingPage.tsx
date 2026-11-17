@@ -187,7 +187,7 @@ export default async function ServiceLandingPage({
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a
                 href="https://wa.me/77072996264"
-                className="rounded-full bg-amber-300 px-6 py-4 text-center text-sm font-semibold text-black transition hover:bg-amber-200"
+                className="hero-primary-cta rounded-full px-6 py-4 text-center text-sm font-semibold transition"
               >
                 {ctaPrimary}
               </a>
