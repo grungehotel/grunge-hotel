@@ -28,8 +28,10 @@ body {
 /* CTA в навигации: красная кнопка с белым текстом в обеих темах. */
 .manager-nav-cta {
   display: inline-flex !important;
+  flex: 0 0 auto !important;
   align-items: center !important;
   justify-content: center !important;
+  white-space: nowrap !important;
   text-align: center !important;
   background: #c81e1e !important;
   color: #fff !important;
