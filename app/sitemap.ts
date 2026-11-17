@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/mixing-mastering-almaty", lastModified: "2026-10-09", priority: 0.8 },
     { path: "/arrangement-almaty", lastModified: "2026-10-09", priority: 0.8 },
     { path: "/audio-engineer-almaty", lastModified: "2026-10-09", priority: 0.8 },
+    { path: "/concert-organization-almaty", lastModified: "2026-11-17", priority: 0.8 },
   ];
 
   return pages.map(({ path, lastModified, priority }) => ({
