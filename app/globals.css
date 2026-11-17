@@ -25,17 +25,23 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* CTA в навигации: белая кнопка в обеих темах. */
+/* CTA в навигации: красная кнопка с белым текстом в обеих темах. */
 .manager-nav-cta {
-  background: #fff !important;
-  color: #18181b !important;
-  border: 1px solid rgb(255 255 255 / .75) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  background: #c81e1e !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  border: 1px solid #e34b43 !important;
   box-shadow: 0 8px 20px rgb(0 0 0 / .22);
 }
 .manager-nav-cta:hover {
-  background: #fff7f7 !important;
-  border-color: #dc2626 !important;
-  color: #991b1b !important;
+  background: #a91616 !important;
+  border-color: #f87171 !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
 }
 .manager-nav-cta:focus-visible {
   outline: 2px solid #fca5a5;
