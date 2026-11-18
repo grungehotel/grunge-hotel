@@ -2,7 +2,7 @@ import ServiceLandingPage, { buildMetadata } from "../components/ServiceLandingP
 
 export const metadata = buildMetadata({
   pathname: "/concert-organization-almaty",
-  image: "/images/ghmain1.jpg",
+  image: "/images/live.jpg",
   title: "Организация концертов в Алматы — Grunge Hotel",
   description:
     "Организация музыкальной части концертов и тематических live-программ в Алматы: трибьют-шоу, программа, артисты, звук, сцена и координация.",
@@ -15,8 +15,8 @@ export default function ConcertOrganizationAlmatyPage() {
       eyebrow="concert production · almaty · live show"
       title="Организация концертов и тематических live-программ в Алматы"
       description="Собираем музыкальную часть концерта в цельный формат: от идеи и программы до артистов, технической координации и работы на площадке. В том числе — трибьют-шоу и тематические концертные вечера."
-      heroImage="/images/ghmain1.jpg"
-      heroAlt="Grunge Hotel на сцене"
+      heroImage="/images/live.jpg"
+      heroAlt="Grunge Hotel на концерте в рок-клубе «Жесть»"
       ctaPrimary="Обсудить концерт"
       ctaSecondary="Оставить бриф"
       intro={[
