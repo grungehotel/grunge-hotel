@@ -51,6 +51,34 @@ export default function ConcertOrganizationAlmatyPage() {
           text: "Для бренда, клуба или частного события, которому нужен не фоновый сет, а самостоятельный музыкальный повод для гостей.",
         },
       ]}
+      instagramCasesTitle="Трибьют-кейсы"
+      instagramCasesDescription="Подтверждённые концертные программы Grunge Hotel: тематические вечера, трибьют-шоу и собственные live-форматы для клубов и концертных площадок. Откройте ролик, чтобы посмотреть материал целиком в Instagram."
+      instagramCases={[
+        {
+          title: "Korn × Deftones — двойной трибьют",
+          href: "https://www.instagram.com/reel/DdnqMR0NEjs/",
+        },
+        {
+          title: "Depeche Mode — трибьют-вечер",
+          href: "https://www.instagram.com/reel/DdYUVz1NjkY/",
+        },
+        {
+          title: "MTV Alternative Party",
+          href: "https://www.instagram.com/reel/DZsPER2tZUs/",
+        },
+        {
+          title: "Imagine Dragons — концертный отчёт",
+          href: "https://www.instagram.com/reel/DFYSLrHCFIa/",
+        },
+        {
+          title: "Imagine Dragons — Астана",
+          href: "https://www.instagram.com/reel/DHa_OJ7CGLC/",
+        },
+        {
+          title: "Deftones — отчётный концерт",
+          href: "https://www.instagram.com/reel/DBRLFjECF1t/",
+        },
+      ]}
       faq={[
         {
           q: "Можно ли собрать концерт вокруг конкретной музыкальной идеи?",
